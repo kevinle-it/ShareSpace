@@ -1,5 +1,6 @@
 package com.lmtri.sharespace.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -70,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.nav_container, HousingFragment.newInstance(1));
         transaction.commit();
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     @Override

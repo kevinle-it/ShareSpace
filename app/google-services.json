@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "336281695482",
+    "firebase_url": "https://sharespace-a1fbe.firebaseio.com",
+    "project_id": "sharespace-a1fbe",
+    "storage_bucket": "sharespace-a1fbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336281695482:android:b7ff03523df58ce4",
+        "android_client_info": {
+          "package_name": "com.lmtri.sharespace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336281695482-1bas5q0oqj5u9pl77f49k2lkbhl9ko6d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lmtri.sharespace",
+            "certificate_hash": "9475554a7d0249dc2819b6e8063748634a638836"
+          }
+        },
+        {
+          "client_id": "336281695482-j4tj4grh2jqus99bsieurj4tkpd1pl9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeGVc2VozmQSroALoGH0ei0_y4nTf1WvE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336281695482-j4tj4grh2jqus99bsieurj4tkpd1pl9s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

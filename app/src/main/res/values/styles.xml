@@ -7,5 +7,19 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorSecondary</item>
     </style>
+    
+    <style name="TextAppearance.AppCompat.TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CustomEditTextTheme">
+        <!--<item name="colorControlNormal">#ff00ed</item>-->
+        <item name="colorControlActivated">@color/white</item>
+        <!--<item name="colorControlHighlight">#ab0000</item>-->
+    </style>
+
+    <style name="LoginProgressDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:textColor">@color/textColorSecondary</item>
+    </style>
 
 </resources>
