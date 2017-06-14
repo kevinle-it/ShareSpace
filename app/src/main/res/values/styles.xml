@@ -18,8 +18,8 @@
         <!--<item name="colorControlHighlight">#ab0000</item>-->
     </style>
 
-    <style name="LoginProgressDialog" parent="Theme.AppCompat.Dialog">
-        <item name="android:textColor">@color/textColorSecondary</item>
+    <style name="LoginProgressDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorControlActivated">@color/colorPrimaryLight</item>
     </style>
 
 </resources>

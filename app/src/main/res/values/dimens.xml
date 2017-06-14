@@ -3,6 +3,18 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+
+    <!-- Login screen margins/paddings. -->
     <dimen name="activity_login_top_padding">56dp</dimen>
     <dimen name="activity_login_left_right_padding">48dp</dimen>
+    <dimen name="activity_login_signup_link_bottom_margin">24dp</dimen>
+    <dimen name="activity_login_signup_link_text_size">16sp</dimen>
+
+    <!-- Signup screen margins/paddings. -->
+    <dimen name="activity_signup_top_padding">56dp</dimen>
+    <dimen name="activity_signup_left_right_padding">24dp</dimen>
+    <dimen name="activity_signup_button_top_bottom_margin">24dp</dimen>
+    <dimen name="activity_signup_button_padding">12dp</dimen>
+    <dimen name="activity_signup_login_link_bottom_margin">24dp</dimen>
+    <dimen name="activity_signup_login_link_text_size">16sp</dimen>
 </resources>

@@ -28,8 +28,9 @@
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:layout_width="0px"
-            android:layout_height="0px"/>
+            android:layout_height="0px" />
 
+        <!--  Email Label -->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,7 +38,6 @@
             android:layout_marginBottom="4dp"
             app:hintTextAppearance="@style/TextAppearance.AppCompat.TextInputLayout"
             android:textColorHint="@color/white">
-
             <!-- :nextFocusUp and :nextFocusLeft have been set to the id of this component
             to prevent the dummy from receiving focus again -->
             <com.lmtri.sharespace.customview.CustomEditText
@@ -52,12 +52,11 @@
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:singleLine="true"
                 android:nextFocusUp="@id/email"
-                android:nextFocusLeft="@id/email"/>
-
+                android:nextFocusLeft="@id/email" />
         </android.support.design.widget.TextInputLayout>
 
+        <!-- Password Label -->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +64,6 @@
             android:layout_marginBottom="8dp"
             app:hintTextAppearance="@style/TextAppearance.AppCompat.TextInputLayout"
             android:textColorHint="@color/white">
-
             <com.lmtri.sharespace.customview.CustomEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
@@ -77,13 +75,12 @@
                 android:textColor="@color/white"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
-                android:maxLines="1"
-                android:singleLine="true" />
-
+                android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
 
+        <!-- Signin Button -->
         <Button
-            android:id="@+id/sign_in_button"
+            android:id="@+id/signin_button"
             style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="46dp"
@@ -93,13 +90,14 @@
             android:text="@string/action_sign_in"
             android:textStyle="bold" />
 
+        <!-- Signup link Label -->
         <TextView android:id="@+id/signup_link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="No account yet? Create one"
+            android:layout_marginBottom="@dimen/activity_login_signup_link_bottom_margin"
+            android:text="@string/signup_link"
             android:gravity="center"
-            android:textSize="16sp"/>
+            android:textSize="@dimen/activity_login_signup_link_text_size" />
 
     </LinearLayout>
 </ScrollView>

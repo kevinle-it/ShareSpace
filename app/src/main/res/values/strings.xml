@@ -6,6 +6,7 @@
     <string name="title_inbox">Inbox</string>
     <string name="title_profile">Profile</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_signup">Sign up</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -16,4 +17,16 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="error_login_failed">Login failed! Username or password is incorrect!</string>
+    <string name="signup_link">No account yet? Create one</string>
+
+    <!-- Strings related to signup -->
+    <string name="hint_signup_email">Email</string>
+    <string name="hint_signup_password">Password</string>
+    <string name="hint_signup_confirm_password">Re-enter Password</string>
+    <string name="hint_signup_date_of_birth">Date of Birth</string>
+    <string name="action_sign_up">Create Account</string>
+    <string name="login_link">Already a member? Login</string>
+    <string name="error_not_match_password">Confirm Password does not match your Password</string>
+    <string name="error_not_enough_age">This app requires the user at least 18 years old</string>
+    <string name="error_signup_failed">Signup failed! Username already exists!</string>
 </resources>
