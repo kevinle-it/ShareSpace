@@ -29,4 +29,7 @@
     <string name="error_not_match_password">Confirm Password does not match your Password</string>
     <string name="error_not_enough_age">This app requires the user at least 18 years old</string>
     <string name="error_signup_failed">Signup failed! Username already exists!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

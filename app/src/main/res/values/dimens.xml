@@ -17,4 +17,19 @@
     <dimen name="activity_signup_button_padding">12dp</dimen>
     <dimen name="activity_signup_login_link_bottom_margin">24dp</dimen>
     <dimen name="activity_signup_login_link_text_size">16sp</dimen>
+
+    <!-- Fragment housing list margins/paddings. -->
+    <dimen name="fragment_housing_list_left_right_margin">3dp</dimen>
+
+    <!-- Fragment housing item margins/paddings/widths/heights. -->
+    <dimen name="fragment_housing_item_top_bottom_padding">10dp</dimen>
+    <dimen name="fragment_housing_item_left_right_margin">3dp</dimen>
+    <dimen name="fragment_housing_item_profile_image_view_width_height">90dp</dimen>
+    <dimen name="fragment_housing_item_house_detail_left_margin">10dp</dimen>
+    <dimen name="fragment_housing_item_house_detail_bottom_margin">5dp</dimen>
+    <dimen name="fragment_housing_item_house_title_text_size">13sp</dimen>
+    <dimen name="fragment_housing_item_house_type_and_location_title_text_size">13sp</dimen>
+    <dimen name="fragment_housing_item_num_of_review_text_size">12sp</dimen>
+    <dimen name="fragment_housing_item_home_list_price_text_size">13sp</dimen>
+
 </resources>

@@ -1,7 +1,9 @@
 package com.lmtri.sharespace.fragment;
 
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,11 +12,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.lmtri.sharespace.R;
 import com.lmtri.sharespace.adapter.HousingRecyclerViewAdapter;
+import com.lmtri.sharespace.helper.Constants;
 import com.lmtri.sharespace.listener.EndlessRecyclerViewScrollListener;
-import com.lmtri.sharespace.model.DummyContent;
-import com.lmtri.sharespace.model.DummyContent.DummyItem;
+import com.lmtri.sharespace.model.Housing;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -24,12 +35,19 @@ import com.lmtri.sharespace.model.DummyContent.DummyItem;
  */
 public class HousingFragment extends Fragment {
 
+    // Firebase Storage.
+    private FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+    private StorageReference storageReference;
+
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
     private EndlessRecyclerViewScrollListener scrollListener;
+
+    private List<Housing> mHousings = new ArrayList<>();
+    private HousingRecyclerViewAdapter mHousingRecyclerViewAdapter;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -91,7 +109,33 @@ public class HousingFragment extends Fragment {
                     }
                 };
             }
-            recyclerView.setAdapter(new HousingRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+            storageReference = firebaseStorage.getReferenceFromUrl(Constants.STORAGE_REFERENCE_URL);
+            for (int i = 1; i <= 11; ++i) {
+                final int j = i;
+                storageReference.child("dummy_item_" + i + ".jpg")
+                        .getDownloadUrl()
+                        .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        mHousings.add(new Housing(String.valueOf(j), uri));
+                        Collections.sort(mHousings, new Comparator<Housing>() {
+                            @Override
+                            public int compare(Housing o1, Housing o2) {
+                                return o1.getId().compareTo(o2.getId());
+                            }
+                        });
+                        mHousingRecyclerViewAdapter.notifyDataSetChanged();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+            mHousingRecyclerViewAdapter = new HousingRecyclerViewAdapter(getActivity(), mHousings, mListener);
+            recyclerView.setAdapter(mHousingRecyclerViewAdapter);
             recyclerView.addOnScrollListener(scrollListener);
         }
         return view;
@@ -138,6 +182,6 @@ public class HousingFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Housing item);
     }
 }

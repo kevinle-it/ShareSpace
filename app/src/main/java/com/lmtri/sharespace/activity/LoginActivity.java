@@ -24,10 +24,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GetTokenResult;
 import com.lmtri.sharespace.R;
 import com.lmtri.sharespace.helper.BitmapLoader;
 import com.lmtri.sharespace.helper.BlurBuilder;
@@ -69,7 +71,23 @@ public class LoginActivity extends AppCompatActivity {
                     // User is signed in.
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
 
+                    user.getIdToken(false).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<GetTokenResult> task) {
+                            String idToken = task.getResult().getToken();
+                            Log.d(TAG, "onAuthStateChanged: ID Token: " + idToken);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
+                    Intent returnIntent = new Intent();
+                    setResult(RESULT_OK, returnIntent);
+                    Log.d(TAG, "onAuthStateChanged: begin finish()");
                     finish();
+                    Log.d(TAG, "onAuthStateChanged: end finish()");
                 } else {
                     // User is signed out.
                     Log.d(TAG, "onAuthStateChanged:signed_out");
