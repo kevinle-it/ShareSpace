@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_housing_detail_availability_icon_padding"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_people"/>
+
+        <TextView
+            android:id="@+id/activity_housing_detail_num_people_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="4 people"
+            android:textSize="@dimen/activity_housing_detail_availability_text_size"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_housing_detail_availability_icon_padding"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_room"/>
+
+        <TextView
+            android:id="@+id/activity_housing_detail_num_room_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="1 rooms"
+            android:textSize="@dimen/activity_housing_detail_availability_text_size"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_housing_detail_availability_icon_padding"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_bed"/>
+
+        <TextView
+            android:id="@+id/activity_housing_detail_num_bed_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="2 beds"
+            android:textSize="@dimen/activity_housing_detail_availability_text_size"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_housing_detail_availability_icon_padding"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_bathtub"/>
+
+        <TextView
+            android:id="@+id/activity_housing_detail_num_bath_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="2 baths"
+            android:textSize="@dimen/activity_housing_detail_availability_text_size"/>
+
+    </LinearLayout>
+
+</LinearLayout>

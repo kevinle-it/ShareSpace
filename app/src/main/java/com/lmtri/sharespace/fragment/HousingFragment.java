@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -86,7 +87,11 @@ public class HousingFragment extends Fragment {
             RecyclerView recyclerView = (RecyclerView) view;
             if (mColumnCount <= 1) {
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+                DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                        linearLayoutManager.getOrientation());
+
                 recyclerView.setLayoutManager(linearLayoutManager);
+                recyclerView.addItemDecoration(dividerItemDecoration);
                 // Retain an instance so that you can call `resetState()` for fresh searches
                 scrollListener = new EndlessRecyclerViewScrollListener(linearLayoutManager) {
                     @Override
@@ -98,7 +103,11 @@ public class HousingFragment extends Fragment {
                 };
             } else {
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(context, mColumnCount);
+                DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                        gridLayoutManager.getOrientation());
+
                 recyclerView.setLayoutManager(gridLayoutManager);
+                recyclerView.addItemDecoration(dividerItemDecoration);
                 // Retain an instance so that you can call `resetState()` for fresh searches
                 scrollListener = new EndlessRecyclerViewScrollListener(gridLayoutManager) {
                     @Override
@@ -126,6 +135,7 @@ public class HousingFragment extends Fragment {
                             }
                         });
                         mHousingRecyclerViewAdapter.notifyDataSetChanged();
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

@@ -25,6 +25,7 @@ public class Constants {
     public static final int NAVIGATION_INDEX_SHARE = R.id.navigation_share;
     public static final int NAVIGATION_INDEX_INBOX = R.id.navigation_inbox;
     public static final int NAVIGATION_INDEX_PROFILE = R.id.navigation_profile;
+    public static final String ROOT_FRAGMENT_VIEW_PAGER_INDEX_PARAM = "ROOT_FRAGMENT_VIEW_PAGER_INDEX_PARAM";
 
     // Constants related to Housing Fragment.
     public static final String STORAGE_REFERENCE_URL = "gs://sharespace-a1fbe.appspot.com/";

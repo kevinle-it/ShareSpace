@@ -15,12 +15,15 @@ import com.lmtri.sharespace.R;
 import com.lmtri.sharespace.adapter.ViewPagerAdapter;
 import com.lmtri.sharespace.customview.CustomViewPager;
 import com.lmtri.sharespace.fragment.HousingFragment;
+import com.lmtri.sharespace.fragment.RootFragment;
 import com.lmtri.sharespace.fragment.SavedFragment;
 import com.lmtri.sharespace.helper.BottomNavigationViewHelper;
 import com.lmtri.sharespace.helper.Constants;
 import com.lmtri.sharespace.model.Housing;
 
 public class MainActivity extends AppCompatActivity implements HousingFragment.OnListFragmentInteractionListener, SavedFragment.OnFragmentInteractionListener {
+
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     private BottomNavigationView mBottomNavigationView;
     private CustomViewPager mViewPager;
@@ -64,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
                         return false;
                     } else {
                         Toast.makeText(getApplicationContext(), "Fragment 1", Toast.LENGTH_SHORT).show();
-                        mViewPager.setCurrentItem(Constants.VIEW_PAGER_INDEX_HOME);
+                        mViewPager.setCurrentItem(Constants.VIEW_PAGER_INDEX_HOME, false);
                     }
                     break;
                 case Constants.NAVIGATION_INDEX_SAVED:
@@ -72,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
                         return false;
                     } else {
                         Toast.makeText(getApplicationContext(), "Fragment 2", Toast.LENGTH_SHORT).show();
-                        mViewPager.setCurrentItem(Constants.VIEW_PAGER_INDEX_SAVED);
+                        mViewPager.setCurrentItem(Constants.VIEW_PAGER_INDEX_SAVED, false);
                     }
                     break;
                 case Constants.NAVIGATION_INDEX_SHARE:
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
                         return false;
                     } else {
                         Toast.makeText(getApplicationContext(), "Fragment 3", Toast.LENGTH_SHORT).show();
-                        mViewPager.setCurrentItem(Constants.VIEW_PAGER_INDEX_SHARE);
+                        mViewPager.setCurrentItem(Constants.VIEW_PAGER_INDEX_SHARE, false);
                     }
                     break;
                 case Constants.NAVIGATION_INDEX_INBOX:
@@ -88,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
                         return false;
                     } else {
                         Toast.makeText(getApplicationContext(), "Fragment 4", Toast.LENGTH_SHORT).show();
-                        mViewPager.setCurrentItem(Constants.VIEW_PAGER_INDEX_INBOX);
+                        mViewPager.setCurrentItem(Constants.VIEW_PAGER_INDEX_INBOX, false);
                     }
                     break;
                 case Constants.NAVIGATION_INDEX_PROFILE:
@@ -96,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
                         return false;
                     } else {
                         Toast.makeText(getApplicationContext(), "Fragment 5", Toast.LENGTH_SHORT).show();
-                        mViewPager.setCurrentItem(Constants.VIEW_PAGER_INDEX_PROFILE);
+                        mViewPager.setCurrentItem(Constants.VIEW_PAGER_INDEX_PROFILE, false);
                     }
                     break;
             }
@@ -127,11 +130,11 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
 
     private void setupViewPager(CustomViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(HousingFragment.newInstance(1));
-        adapter.addFragment(SavedFragment.newInstance("a", "b"));
-        adapter.addFragment(SavedFragment.newInstance("c", "d"));
-        adapter.addFragment(SavedFragment.newInstance("e", "f"));
-        adapter.addFragment(SavedFragment.newInstance("g", "h"));
+        adapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_HOME));
+        adapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_SAVED));
+        adapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_SHARE));
+        adapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_INBOX));
+        adapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_PROFILE));
         viewPager.setAdapter(adapter);
     }
 
@@ -152,6 +155,9 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
     @Override
     public void onListFragmentInteraction(Housing item) {
         Toast.makeText(getApplicationContext(), item.getId(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), HousingDetailActivity.class);
+        intent.putExtra("EXTRA_SESSION_ID", item.getProfileImageUrl().toString());
+        startActivity(intent);
     }
 
     @Override

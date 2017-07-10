@@ -30,6 +30,23 @@
     <string name="error_not_enough_age">This app requires the user at least 18 years old</string>
     <string name="error_signup_failed">Signup failed! Username already exists!</string>
 
+    <!-- Strings related to activity housing detail -->
+    <string name="activity_housing_detail_person">person</string>
+    <string name="activity_housing_detail_people">people</string>
+    <string name="activity_housing_detail_room">room</string>
+    <string name="activity_housing_detail_rooms">rooms</string>
+    <string name="activity_housing_detail_bed">bed</string>
+    <string name="activity_housing_detail_beds">beds</string>
+    <string name="activity_housing_detail_bath">bath</string>
+    <string name="activity_housing_detail_baths">baths</string>
+    <string name="activity_housing_detail_house_number">House Number</string>
+    <string name="activity_housing_detail_house_street">Street</string>
+    <string name="activity_housing_detail_house_ward">Ward</string>
+    <string name="activity_housing_detail_house_district">District</string>
+    <string name="activity_housing_detail_house_city">City</string>
+    <string name="activity_housing_detail_call">Call</string>
+    <string name="activity_housing_detail_schedule">Schedule</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

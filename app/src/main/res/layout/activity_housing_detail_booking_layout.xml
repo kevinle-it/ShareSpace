@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/activity_housing_detail_call_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_housing_detail_booking_call_schedule_button_height"
+        android:layout_weight="1"
+        android:background="@drawable/ripple_effect"
+        android:clickable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_housing_detail_booking_call_icon_padding"
+                android:src="@drawable/ic_call" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/activity_housing_detail_call"
+                android:textSize="@dimen/activity_housing_detail_booking_call_text_size"
+                android:textColor="@color/textColorPrimary"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="@color/colorSecondary"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="@color/colorSecondary"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/activity_housing_detail_schedule_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_housing_detail_booking_call_schedule_button_height"
+        android:layout_weight="1"
+        android:background="@drawable/ripple_effect"
+        android:clickable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_housing_detail_booking_schedule_icon_padding"
+                android:src="@drawable/ic_schedule" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/activity_housing_detail_schedule"
+                android:textSize="@dimen/activity_housing_detail_booking_schedule_text_size"
+                android:textColor="@color/textColorPrimary"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

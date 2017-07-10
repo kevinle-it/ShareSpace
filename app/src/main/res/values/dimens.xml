@@ -27,9 +27,52 @@
     <dimen name="fragment_housing_item_profile_image_view_width_height">90dp</dimen>
     <dimen name="fragment_housing_item_house_detail_left_margin">10dp</dimen>
     <dimen name="fragment_housing_item_house_detail_bottom_margin">5dp</dimen>
+    <dimen name="fragment_housing_item_rating_width">70dp</dimen>
+    <dimen name="fragment_housing_item_rating_height">15dp</dimen>
     <dimen name="fragment_housing_item_house_title_text_size">13sp</dimen>
     <dimen name="fragment_housing_item_house_type_and_location_title_text_size">13sp</dimen>
-    <dimen name="fragment_housing_item_num_of_review_text_size">12sp</dimen>
-    <dimen name="fragment_housing_item_home_list_price_text_size">13sp</dimen>
+    <dimen name="fragment_housing_item_num_review_text_size">12sp</dimen>
+    <dimen name="fragment_housing_item_price_text_size">13sp</dimen>
+
+    <!-- Activity housing detail margins/paddings/widths/heights. -->
+    <dimen name="activity_housing_detail_house_profile_image_height">192dp</dimen>
+
+    <dimen name="activity_housing_detail_house_title_price_rating_layout_left_right_margin">25dp</dimen>
+    <dimen name="activity_housing_detail_house_title_price_rating_top_bottom_margin">15dp</dimen>
+    <dimen name="activity_housing_detail_rating_top_margin">5dp</dimen>
+    <dimen name="activity_housing_detail_rating_width">70dp</dimen>
+    <dimen name="activity_housing_detail_rating_height">15dp</dimen>
+    <dimen name="activity_housing_detail_num_rating_left_margin">10dp</dimen>
+    <dimen name="activity_housing_detail_house_title_text_size">24sp</dimen>
+    <dimen name="activity_housing_detail_house_price_text_size">20sp</dimen>
+    <dimen name="activity_housing_detail_num_rating_text_size">14sp</dimen>
+
+    <dimen name="activity_housing_detail_horizontal_line_height">1dp</dimen>
+    <dimen name="activity_housing_detail_horizontal_line_top_bottom_margin">15dp</dimen>
+    <dimen name="activity_housing_detail_horizontal_line_left_right_margin">25dp</dimen>
+
+    <dimen name="activity_housing_detail_availability_layout_left_right_margin">30dp</dimen>
+    <dimen name="activity_housing_detail_availability_icon_padding">2dp</dimen>
+    <dimen name="activity_housing_detail_availability_text_size">14sp</dimen>
+
+    <dimen name="activity_housing_detail_about_house_layout_left_right_margin">25dp</dimen>
+    <dimen name="activity_housing_detail_about_house_text_size">14sp</dimen>
+
+    <dimen name="activity_housing_detail_address_layout_left_right_margin">25dp</dimen>
+    <dimen name="activity_housing_detail_address_text_size">14sp</dimen>
+
+    <dimen name="activity_housing_detail_house_host_type_layout_left_right_margin">25dp</dimen>
+    <dimen name="activity_housing_detail_house_host_width_height">60dp</dimen>
+    <dimen name="activity_housing_detail_house_host_right_margin">15dp</dimen>
+    <dimen name="activity_housing_detail_house_type_left_margin">15dp</dimen>
+    <dimen name="activity_housing_detail_house_host_text_size">16sp</dimen>
+    <dimen name="activity_housing_detail_house_type_text_size">16sp</dimen>
+
+    <dimen name="activity_housing_detail_booking_layout_left_right_margin">25dp</dimen>
+    <dimen name="activity_housing_detail_booking_call_schedule_button_height">48dp</dimen>
+    <dimen name="activity_housing_detail_booking_call_icon_padding">5dp</dimen>
+    <dimen name="activity_housing_detail_booking_schedule_icon_padding">5dp</dimen>
+    <dimen name="activity_housing_detail_booking_call_text_size">18sp</dimen>
+    <dimen name="activity_housing_detail_booking_schedule_text_size">18sp</dimen>
 
 </resources>

@@ -73,7 +73,7 @@ public class HousingRecyclerViewAdapter extends RecyclerView.Adapter<HousingRecy
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mProfileImage = (ImageView) view.findViewById(R.id.house_profile_image);
+            mProfileImage = (ImageView) view.findViewById(R.id.fragment_housing_item_house_profile_image);
         }
     }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/activity_housing_detail_about_house"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spend an unforgetable holiday in the enchanting surrounding of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view.\nIt's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches."
+        android:textSize="@dimen/activity_housing_detail_about_house_text_size"
+        android:textColor="@color/textColorSecondary" />
+
+</FrameLayout>
