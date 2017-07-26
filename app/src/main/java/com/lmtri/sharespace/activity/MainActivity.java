@@ -12,30 +12,31 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.lmtri.sharespace.R;
+import com.lmtri.sharespace.activity.hometab.HousingDetailActivity;
 import com.lmtri.sharespace.adapter.ViewPagerAdapter;
 import com.lmtri.sharespace.customview.CustomViewPager;
-import com.lmtri.sharespace.fragment.HousingFragment;
 import com.lmtri.sharespace.fragment.RootFragment;
-import com.lmtri.sharespace.fragment.SavedFragment;
+import com.lmtri.sharespace.fragment.home.HousingFragment;
+import com.lmtri.sharespace.fragment.profile.ProfileFragment;
+import com.lmtri.sharespace.fragment.saved.SavedFragment;
 import com.lmtri.sharespace.helper.BottomNavigationViewHelper;
 import com.lmtri.sharespace.helper.Constants;
 import com.lmtri.sharespace.model.Housing;
 
-public class MainActivity extends AppCompatActivity implements HousingFragment.OnListFragmentInteractionListener, SavedFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements
+        HousingFragment.OnListFragmentInteractionListener,
+        SavedFragment.OnFragmentInteractionListener,
+        ProfileFragment.OnFragmentInteractionListener {
 
     public static final String TAG = MainActivity.class.getSimpleName();
 
     private BottomNavigationView mBottomNavigationView;
     private CustomViewPager mViewPager;
+    private ViewPagerAdapter mViewPagerAdapter;
 
     private MenuItem mPrevMenuItem;
 
-    private ViewPager.OnPageChangeListener mOnPageChangeListener = new ViewPager.OnPageChangeListener() {
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-        }
-
+    private ViewPager.SimpleOnPageChangeListener mViewPagerOnPageChangeListener = new ViewPager.SimpleOnPageChangeListener() {
         @Override
         public void onPageSelected(int position) {
             if (mPrevMenuItem != null) {
@@ -45,14 +46,8 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
             {
                 mBottomNavigationView.getMenu().getItem(0).setChecked(false);
             }
-            Log.d("page", "onPageSelected: " + position);
             mBottomNavigationView.getMenu().getItem(position).setChecked(true);
             mPrevMenuItem = mBottomNavigationView.getMenu().getItem(position);
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-
         }
     };
 
@@ -115,7 +110,6 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
 
         // Initialize View Pager.
         mViewPager = (CustomViewPager) findViewById(R.id.view_pager);
-        mViewPager.addOnPageChangeListener(mOnPageChangeListener);
         mViewPager.setPagingEnabled(false);
         mViewPager.setOffscreenPageLimit(Constants.VIEW_PAGER_OFF_SCREEN_PAGE_LIMIT);
 
@@ -123,24 +117,48 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
         mBottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
         mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         BottomNavigationViewHelper.disableShiftMode(mBottomNavigationView);
-        
+
         Intent intent = new Intent(this, LoginActivity.class);
-        startActivityForResult(intent, Constants.LOGIN_REQUEST);
+        startActivityForResult(intent, Constants.START_ACTIVITY_LOGIN_REQUEST);
+    }
+
+    @Override
+    protected void onStart() {
+        mViewPager.addOnPageChangeListener(mViewPagerOnPageChangeListener);
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        mViewPager.removeOnPageChangeListener(mViewPagerOnPageChangeListener);
+        super.onStop();
+    }
+
+    @Override
+    public void onBackPressed() {
+//        Fragment currentFragment = ((RootFragment) mViewPagerAdapter.getItem(mViewPager.getCurrentItem())).getCurrentFragment();
+//        if (currentFragment instanceof PostHistoryFragment) {
+//            ((PostHistoryFragment) currentFragment).onBackPressed();
+//        } else {
+            super.onBackPressed();
+//        }
     }
 
     private void setupViewPager(CustomViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_HOME));
-        adapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_SAVED));
-        adapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_SHARE));
-        adapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_INBOX));
-        adapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_PROFILE));
-        viewPager.setAdapter(adapter);
+        mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        mViewPagerAdapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_HOME));
+        mViewPagerAdapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_SAVED));
+        mViewPagerAdapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_SHARE));
+        mViewPagerAdapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_INBOX));
+        mViewPagerAdapter.addFragment(RootFragment.newInstance(Constants.VIEW_PAGER_INDEX_PROFILE));
+        viewPager.setAdapter(mViewPagerAdapter);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == Constants.LOGIN_REQUEST) {
+        super.onActivityResult(requestCode, resultCode, data);  // For Fragments to consume onActivityResult
+                                                                // (of Activities start by Fragments) before MainActivity.
+        if (requestCode == Constants.START_ACTIVITY_LOGIN_REQUEST) {
             if (resultCode == RESULT_OK) {
                 setupViewPager(mViewPager);
             }
@@ -154,9 +172,38 @@ public class MainActivity extends AppCompatActivity implements HousingFragment.O
 
     @Override
     public void onListFragmentInteraction(Housing item) {
-        Toast.makeText(getApplicationContext(), item.getId(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(), HousingDetailActivity.class);
-        intent.putExtra("EXTRA_SESSION_ID", item.getProfileImageUrl().toString());
+        Intent intent = new Intent(this, HousingDetailActivity.class);
+        intent.putExtra(Constants.ACTIVITY_HOUSING_DETAIL_PROFILE_IMAGE_URL_EXTRA, item.getProfileImageUrl().toString());
+        if (item.getTitle() != null && !item.getTitle().isEmpty()) {
+            intent.putExtra(Constants.ACTIVITY_HOUSING_DETAIL_HOUSE_TITLE_EXTRA, item.getTitle());
+        }
+        if (item.getPrice() != null && !item.getPrice().isEmpty()) {
+            intent.putExtra(Constants.ACTIVITY_HOUSING_DETAIL_PRICE_EXTRA, item.getPrice());
+        }
+        if (item.getDetailsInfo() != null && !item.getDetailsInfo().isEmpty()) {
+            intent.putExtra(Constants.ACTIVITY_HOUSING_DETAIL_DETAILS_EXTRA, item.getDetailsInfo());
+        }
+        if (item.getAddressHouseNumber() != null && !item.getAddressHouseNumber().isEmpty()) {
+            intent.putExtra(Constants.ACTIVITY_HOUSING_DETAIL_HOUSE_NUMBER_EXTRA, item.getAddressHouseNumber());
+        }
+        if (item.getAddressStreet() != null && !item.getAddressStreet().isEmpty()) {
+            intent.putExtra(Constants.ACTIVITY_HOUSING_DETAIL_STREET_EXTRA, item.getAddressStreet());
+        }
+        if (item.getAddressWard() != null && !item.getAddressWard().isEmpty()) {
+            intent.putExtra(Constants.ACTIVITY_HOUSING_DETAIL_WARD_EXTRA, item.getAddressWard());
+        }
+        if (item.getAddressDistrict() != null && !item.getAddressDistrict().isEmpty()) {
+            intent.putExtra(Constants.ACTIVITY_HOUSING_DETAIL_DISTRICT_EXTRA, item.getAddressDistrict());
+        }
+        if (item.getAddressCity() != null && !item.getAddressCity().isEmpty()) {
+            intent.putExtra(Constants.ACTIVITY_HOUSING_DETAIL_CITY_EXTRA, item.getAddressCity());
+        }
+        if (item.getHouseType() != null && !item.getHouseType().isEmpty()) {
+            intent.putExtra(Constants.ACTIVITY_HOUSING_DETAIL_HOUSE_TYPE_EXTRA, item.getHouseType());
+        }
+        if (item.getOwnerName() != null && !item.getOwnerName().isEmpty()) {
+            intent.putExtra(Constants.ACTIVITY_HOUSING_DETAIL_OWNER_NAME_EXTRA, item.getOwnerName());
+        }
         startActivity(intent);
     }
 

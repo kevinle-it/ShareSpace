@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lmtri.sharespace.R;
+import com.lmtri.sharespace.fragment.home.HousingFragment;
+import com.lmtri.sharespace.fragment.profile.ProfileFragment;
+import com.lmtri.sharespace.fragment.saved.SavedFragment;
 import com.lmtri.sharespace.helper.Constants;
 
 /**
@@ -74,7 +77,7 @@ public class RootFragment extends Fragment {
                 transaction.replace(R.id.root_container, SavedFragment.newInstance("e", "f"));
                 break;
             case Constants.VIEW_PAGER_INDEX_PROFILE:
-                transaction.replace(R.id.root_container, SavedFragment.newInstance("g", "h"));
+                transaction.replace(R.id.root_container, ProfileFragment.newInstance("g", "h"));
                 break;
         }
         transaction.commit();
@@ -82,4 +85,7 @@ public class RootFragment extends Fragment {
         return view;
     }
 
+    public Fragment getCurrentFragment() {
+        return getChildFragmentManager().findFragmentById(R.id.root_container);
+    }
 }

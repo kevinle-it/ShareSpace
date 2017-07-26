@@ -24,5 +24,6 @@ public class KeyboardHelper {
             InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
+        view.clearFocus();
     }
 }

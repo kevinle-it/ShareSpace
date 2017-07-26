@@ -1,13 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/home_list"
-    android:name="com.lmtri.sharespace.fragment.HousingFragment"
+    android:name="com.lmtri.sharespace.fragment.home.HousingFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="@dimen/fragment_housing_list_left_right_margin"
-    android:layout_marginRight="@dimen/fragment_housing_list_left_right_margin"
-    app:layoutManager="LinearLayoutManager"
-    tools:context="com.lmtri.sharespace.fragment.HousingFragment"
-    tools:listitem="@layout/fragment_housing_item" />
+    tools:context="com.lmtri.sharespace.fragment.home.HousingFragment">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fragment_housing_list_home_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fragment_housing_list_left_right_margin"
+            android:layout_marginRight="@dimen/fragment_housing_list_left_right_margin"
+            android:clipToPadding="false"
+            tools:listitem="@layout/fragment_housing_item"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/fragment_housing_list_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:minHeight="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways|snap"/>
+
+        </android.support.design.widget.AppBarLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <com.miguelcatalan.materialsearchview.MaterialSearchView
+        android:id="@+id/fragment_housing_list_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</android.support.v4.widget.DrawerLayout>

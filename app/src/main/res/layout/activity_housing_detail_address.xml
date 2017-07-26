@@ -13,35 +13,35 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="House Number"
+            android:text="@string/activity_housing_detail_house_number"
             android:textSize="@dimen/activity_housing_detail_address_text_size"
             android:textColor="@color/textColorPrimary" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Street"
+            android:text="@string/activity_housing_detail_house_street"
             android:textSize="@dimen/activity_housing_detail_address_text_size"
             android:textColor="@color/textColorPrimary" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ward"
+            android:text="@string/activity_housing_detail_house_ward"
             android:textSize="@dimen/activity_housing_detail_address_text_size"
             android:textColor="@color/textColorPrimary" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="District"
+            android:text="@string/activity_housing_detail_house_district"
             android:textSize="@dimen/activity_housing_detail_address_text_size"
             android:textColor="@color/textColorPrimary" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="City"
+            android:text="@string/activity_housing_detail_house_city"
             android:textSize="@dimen/activity_housing_detail_address_text_size"
             android:textColor="@color/textColorPrimary" />
 

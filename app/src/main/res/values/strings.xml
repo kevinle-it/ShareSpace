@@ -1,52 +1,174 @@
 <resources>
     <string name="app_name">Share Space</string>
-    <string name="title_home">Explore</string>
-    <string name="title_saved">Saved</string>
-    <string name="title_share">Share</string>
-    <string name="title_inbox">Inbox</string>
-    <string name="title_profile">Profile</string>
-    <string name="title_activity_login">Sign in</string>
-    <string name="title_activity_signup">Sign up</string>
+    <string name="title_home">Trang chủ</string>
+    <string name="title_saved">Tin đã lưu</string>
+    <string name="title_share">Tìm bạn thuê</string>
+    <string name="title_appointment">Lịch hẹn</string>
+    <string name="title_profile">Cá nhân</string>
+    <string name="title_activity_login">Đăng nhập</string>
+    <string name="title_activity_signup">Đăng xuất</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="error_login_failed">Login failed! Username or password is incorrect!</string>
-    <string name="signup_link">No account yet? Create one</string>
+    <string name="prompt_password">Mật khẩu</string>
+    <string name="action_sign_in">Đăng nhập</string>
+    <string name="sign_in_authenticating">Đang xác minh</string>
+    <string name="error_invalid_email">Email không đúng định dạng</string>
+    <string name="error_invalid_password">Mật khẩu quá ngắn</string>
+    <string name="error_incorrect_password">Mật khẩu không chính xác</string>
+    <string name="error_field_required">Phần này cần được nhập</string>
+    <string name="error_login_failed">Đăng nhập thất bại!\nEmail hoặc mật khẩu không chính xác!</string>
+    <string name="signup_link">Chưa có tài khoản? Tạo mới</string>
 
     <!-- Strings related to signup -->
     <string name="hint_signup_email">Email</string>
-    <string name="hint_signup_password">Password</string>
-    <string name="hint_signup_confirm_password">Re-enter Password</string>
-    <string name="hint_signup_date_of_birth">Date of Birth</string>
-    <string name="action_sign_up">Create Account</string>
-    <string name="login_link">Already a member? Login</string>
-    <string name="error_not_match_password">Confirm Password does not match your Password</string>
-    <string name="error_not_enough_age">This app requires the user at least 18 years old</string>
-    <string name="error_signup_failed">Signup failed! Username already exists!</string>
+    <string name="hint_signup_password">Mật khẩu</string>
+    <string name="hint_signup_confirm_password">Xác nhận mật khẩu</string>
+    <string name="hint_signup_date_of_birth">Ngày, tháng, năm sinh</string>
+    <string name="action_sign_up">Đăng ký</string>
+    <string name="login_link">Đã có tài khoản? Đăng nhập</string>
+    <string name="error_not_match_password">Mật khẩu xác nhận không trùng mật khẩu</string>
+    <string name="error_not_enough_age">Ứng dụng yêu cầu người dùng trên 18 tuổi</string>
+    <string name="error_signup_failed">Đăng ký thất bại! Email đã tồn tại!</string>
+
+    <!-- Strings related to fragment housing list -->
+    <string name="fragment_housing_list_toolbar_filter_hint">Bộ lọc tìm kiếm</string>
+    <string name="fragment_housing_list_toolbar_post_house_hint">Đăng nhà</string>
+
+    <!-- Strings related to housing recycler view adapter -->
+    <string name="housing_recycler_view_adapter_house_type_in_district">Tại Q./H. </string>
 
     <!-- Strings related to activity housing detail -->
-    <string name="activity_housing_detail_person">person</string>
-    <string name="activity_housing_detail_people">people</string>
-    <string name="activity_housing_detail_room">room</string>
-    <string name="activity_housing_detail_rooms">rooms</string>
-    <string name="activity_housing_detail_bed">bed</string>
-    <string name="activity_housing_detail_beds">beds</string>
-    <string name="activity_housing_detail_bath">bath</string>
-    <string name="activity_housing_detail_baths">baths</string>
-    <string name="activity_housing_detail_house_number">House Number</string>
-    <string name="activity_housing_detail_house_street">Street</string>
-    <string name="activity_housing_detail_house_ward">Ward</string>
-    <string name="activity_housing_detail_house_district">District</string>
-    <string name="activity_housing_detail_house_city">City</string>
-    <string name="activity_housing_detail_call">Call</string>
-    <string name="activity_housing_detail_schedule">Schedule</string>
+    <string name="activity_housing_detail_save_post_hint">Lưu tin</string>
+    <string name="activity_housing_detail_edit_post_hint">Sửa bài đăng</string>
+    <string name="activity_housing_detail_find_share_partner_hint">Tìm bạn thuê</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="activity_housing_detail_people">người</string>
+    <string name="activity_housing_detail_room">phòng khách</string>
+    <string name="activity_housing_detail_bed">phòng ngủ</string>
+    <string name="activity_housing_detail_bath">phòng tắm</string>
+
+    <string name="activity_housing_detail_house_number">Số nhà</string>
+    <string name="activity_housing_detail_house_street">Đường</string>
+    <string name="activity_housing_detail_house_ward">Phường/Xã</string>
+    <string name="activity_housing_detail_house_district">Quận/Huyện</string>
+    <string name="activity_housing_detail_house_city">Tỉnh/Thành phố</string>
+
+    <string name="activity_housing_detail_hosted_by">Chủ nhà: </string>
+
+    <!-- Strings related to activity post house/activity post house detailed item -->
+    <string name="activity_post_house_cover_image">Ảnh bìa</string>
+
+    <string name="activity_post_house_detailed_item_done_button">Xong</string>
+
+    <string name="activity_post_house_feature_section">ĐẶC ĐIỂM</string>
+    <string name="activity_post_house_house_type">Loại nhà</string>
+    <string name="activity_post_house_detailed_item_house_type_arbitrary">Bất kỳ</string>
+    <string name="activity_post_house_detailed_item_house_type_apartment">Căn hộ chung cư</string>
+    <string name="activity_post_house_detailed_item_house_type_private_house">Nhà nguyên căn</string>
+    <string name="activity_post_house_detailed_item_house_type_street_front_house">Nhà mặt phố</string>
+    <string name="activity_post_house_detailed_item_house_type_private_room">Phòng trọ</string>
+    <string-array name="activity_post_house_detailed_item_house_type_array">
+        <item>@string/activity_post_house_detailed_item_house_type_arbitrary</item>
+        <item>@string/activity_post_house_detailed_item_house_type_apartment</item>
+        <item>@string/activity_post_house_detailed_item_house_type_private_house</item>
+        <item>@string/activity_post_house_detailed_item_house_type_street_front_house</item>
+        <item>@string/activity_post_house_detailed_item_house_type_private_room</item>
+    </string-array>
+    <string name="activity_post_house_area">Diện tích (m^2)</string>
+
+    <string name="activity_post_house_location_section">VỊ TRÍ</string>
+    <string name="activity_post_house_address">Địa chỉ</string>
+    <string name="activity_post_house_detailed_item_address_house_number_section">Số nhà</string>
+    <string name="activity_post_house_detailed_item_address_street_section">Đường</string>
+    <string name="activity_post_house_detailed_item_address_ward_section">Phường/Xã</string>
+    <string name="activity_post_house_detailed_item_address_ward_acronym">P./X. </string>
+    <string name="activity_post_house_detailed_item_address_district_section">Quận/Huyện</string>
+    <string name="activity_post_house_detailed_item_address_district_acronym">Q./H. </string>
+    <string name="activity_post_house_detailed_item_address_city_section">Tỉnh/Thành phố</string>
+    <string name="activity_post_house_detailed_item_address_shown">Địa chỉ: </string>
+    <string-array name="activity_post_house_detailed_item_address_array">
+        <item>@string/activity_post_house_detailed_item_address_house_number_section</item>
+        <item>@string/activity_post_house_detailed_item_address_street_section</item>
+        <item>@string/activity_post_house_detailed_item_address_ward_section</item>
+        <item>@string/activity_post_house_detailed_item_address_district_section</item>
+        <item>@string/activity_post_house_detailed_item_address_city_section</item>
+        <item>@string/activity_post_house_detailed_item_address_shown</item>
+    </string-array>
+    <string name="activity_post_house_house_direction">Hướng nhà</string>
+    <string name="activity_post_house_detailed_item_house_direction_arbitrary">Bất kỳ</string>
+    <string name="activity_post_house_detailed_item_house_direction_not_defined">Chưa xác định</string>
+    <string name="activity_post_house_detailed_item_house_direction_east">Đông</string>
+    <string name="activity_post_house_detailed_item_house_direction_west">Tây</string>
+    <string name="activity_post_house_detailed_item_house_direction_south">Nam</string>
+    <string name="activity_post_house_detailed_item_house_direction_north">Bắc</string>
+    <string name="activity_post_house_detailed_item_house_direction_north_east">Đông-Bắc</string>
+    <string name="activity_post_house_detailed_item_house_direction_north_west">Tây-Bắc</string>
+    <string name="activity_post_house_detailed_item_house_direction_south_east">Đông-Nam</string>
+    <string name="activity_post_house_detailed_item_house_direction_south_west">Tây-Nam</string>
+    <string-array name="activity_post_house_detailed_item_house_direction_array">
+        <item>@string/activity_post_house_detailed_item_house_direction_arbitrary</item>
+        <item>@string/activity_post_house_detailed_item_house_direction_not_defined</item>
+        <item>@string/activity_post_house_detailed_item_house_direction_east</item>
+        <item>@string/activity_post_house_detailed_item_house_direction_west</item>
+        <item>@string/activity_post_house_detailed_item_house_direction_south</item>
+        <item>@string/activity_post_house_detailed_item_house_direction_north</item>
+        <item>@string/activity_post_house_detailed_item_house_direction_north_east</item>
+        <item>@string/activity_post_house_detailed_item_house_direction_north_west</item>
+        <item>@string/activity_post_house_detailed_item_house_direction_south_east</item>
+        <item>@string/activity_post_house_detailed_item_house_direction_south_west</item>
+    </string-array>
+
+    <string name="activity_post_house_price_and_contact_section">GIÁ VÀ LIÊN HỆ</string>
+    <string name="activity_post_house_price">Giá tiền</string>
+    <string name="activity_post_house_detailed_item_price_shown">GIÁ HIỂN THỊ: </string>
+    <string name="activity_post_house_detailed_item_price_unit_section">ĐƠN VỊ</string>
+    <string name="activity_post_house_detailed_item_price_thousand_per_month">Trăm nghìn/tháng</string>
+    <string name="activity_post_house_detailed_item_price_million_per_month">Triệu/tháng</string>
+    <string name="activity_post_house_detailed_item_price_deal">Thỏa thuận</string>
+    <string-array name="activity_post_house_detailed_item_price_unit_array">
+        <item>@string/activity_post_house_detailed_item_price_thousand_per_month</item>
+        <item>@string/activity_post_house_detailed_item_price_million_per_month</item>
+        <item>@string/activity_post_house_detailed_item_price_deal</item>
+    </string-array>
+    <string name="activity_post_house_price_not_input_alert">Bạn chưa nhập giá!</string>
+    <string name="activity_post_house_contact">Liên hệ</string>
+    <string name="activity_post_house_detailed_item_contact_section">THÔNG TIN LIÊN HỆ</string>
+    <string name="activity_post_house_detailed_item_contact_name">Tên liên lạc</string>
+    <string name="activity_post_house_detailed_item_contact_number">Điện thoại</string>
+    <string name="activity_post_house_detailed_item_contact_email">Email</string>
+    <string-array name="activity_post_house_detailed_item_contact_array">
+        <item>@string/activity_post_house_detailed_item_contact_name</item>
+        <item>@string/activity_post_house_detailed_item_contact_number</item>
+        <item>@string/activity_post_house_detailed_item_contact_email</item>
+    </string-array>
+
+    <string name="activity_post_house_details_info_section">THÔNG TIN CHI TIẾT</string>
+    <string name="activity_post_house_details">Chi tiết</string>
+    <string name="activity_post_house_detailed_item_details_hint">Mô tả về nhà bạn.\nVí dụ: Địa chỉ, diện tích, giá, hướng nhà...</string>
+
+    <string name="activity_post_house_reset_input">Thiết lập lại</string>
+    <string name="activity_post_house_cancel">Hủy</string>
+    <string name="activity_post_house_cancel_alert_title">Thông báo</string>
+    <string name="activity_post_house_cancel_alert_message">Bạn muốn ngừng đăng tin?</string>
+    <string name="activity_post_house_cancel_alert_confirm">ĐỒNG Ý</string>
+    <string name="activity_post_house_cancel_alert_cancel">HỦY</string>
+    <string name="activity_post_house_post">Đăng tin</string>
+    <string name="activity_post_house_post_error_message_missing">Bạn chưa nhập</string>
+    <string name="activity_post_house_post_error_message_missing_house_type">Loại nhà,</string>
+    <string name="activity_post_house_post_error_message_missing_area">Diện tích,</string>
+    <string name="activity_post_house_post_error_message_missing_district">Quận,</string>
+    <string name="activity_post_house_post_error_message_missing_city">Thành Phố,</string>
+    <string name="activity_post_house_post_error_message_missing_price">Giá,</string>
+    <string name="activity_post_house_post_error_message_missing_owner_name">Tên người đăng,</string>
+
+    <!-- Strings related to fragment profile -->
+    <string name="fragment_profile_edit_profile">SỬA THÔNG TIN</string>
+    <string name="fragment_profile_house_post_history">Tin đã đăng</string>
+    <string name="fragment_profile_notes">Ghi chú</string>
+    <string name="fragment_profile_house_photo_album">Hình ảnh</string>
+    <string name="fragment_profile_settings">Cài đặt</string>
+
+    <!-- Strings related to fragment saved -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

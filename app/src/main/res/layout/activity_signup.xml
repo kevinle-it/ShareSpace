@@ -19,8 +19,8 @@
 
         <ImageView android:src="@drawable/share_space_logo_2"
             android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:layout_marginBottom="24dp"
+            android:layout_height="@dimen/activity_signup_share_space_logo_height"
+            android:layout_marginBottom="@dimen/activity_signup_share_space_logo_bottom_margin"
             android:layout_gravity="center_horizontal" />
 
         <!-- Dummy item to prevent AutoCompleteTextView from receiving focus -->
@@ -34,8 +34,8 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/activity_signup_input_top_bottom_margin"
+            android:layout_marginBottom="@dimen/activity_signup_input_top_bottom_margin"
             app:hintTextAppearance="@style/TextAppearance.AppCompat.TextInputLayout"
             android:textColorHint="@color/white">
             <!-- :nextFocusUp and :nextFocusLeft have been set to the id of this component
@@ -56,8 +56,8 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/activity_signup_input_top_bottom_margin"
+            android:layout_marginBottom="@dimen/activity_signup_input_top_bottom_margin"
             app:hintTextAppearance="@style/TextAppearance.AppCompat.TextInputLayout"
             android:textColorHint="@color/white">
             <com.lmtri.sharespace.customview.CustomEditText
@@ -74,8 +74,8 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/activity_signup_input_top_bottom_margin"
+            android:layout_marginBottom="@dimen/activity_signup_input_top_bottom_margin"
             app:hintTextAppearance="@style/TextAppearance.AppCompat.TextInputLayout"
             android:textColorHint="@color/white">
             <com.lmtri.sharespace.customview.CustomEditText
@@ -92,8 +92,8 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/activity_signup_input_top_bottom_margin"
+            android:layout_marginBottom="@dimen/activity_signup_input_top_bottom_margin"
             app:hintTextAppearance="@style/TextAppearance.AppCompat.TextInputLayout"
             android:textColorHint="@color/white">
             <com.lmtri.sharespace.customview.CustomEditText

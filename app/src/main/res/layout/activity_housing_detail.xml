@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.lmtri.sharespace.activity.HousingDetailActivity">
+    tools:context="com.lmtri.sharespace.activity.hometab.HousingDetailActivity">
 
     <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/activity_housing_detail_coordinator_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/activity_housing_detail_booking_divider">
@@ -28,15 +27,53 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/activity_housing_detail_house_profile_image_height"
                     android:scaleType="fitXY"
-                    app:layout_collapseMode="parallax"
-                    app:layout_collapseParallaxMultiplier="0.0"/>
+                    app:layout_collapseMode="parallax" />
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/activity_housing_detail_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:minHeight="?attr/actionBarSize"
-                    app:layout_collapseMode="pin"/>
+                    app:layout_collapseMode="pin">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/activity_housing_detail_heart_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/activity_housing_detail_edit_post_button"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/activity_housing_detail_heart_button_right_margin"
+                            android:clickable="true"
+                            android:src="@drawable/ic_heart_white_thicker_stroke" />
+
+                        <ImageView
+                            android:id="@+id/activity_housing_detail_edit_post_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/activity_housing_detail_find_roommate_button"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/activity_housing_detail_edit_post_button_right_margin"
+                            android:clickable="true"
+                            android:src="@drawable/ic_edit_darker_gray_thicker" />
+
+                        <ImageView
+                            android:id="@+id/activity_housing_detail_find_roommate_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/activity_housing_detail_find_roommate_button_right_margin"
+                            android:clickable="true"
+                            android:src="@drawable/ic_hand_shake_people_darker_gray_thicker" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.Toolbar>
 
             </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -55,7 +92,7 @@
                 android:orientation="vertical">
 
                 <include
-                    layout="@layout/activity_housing_detail_house_title_price_rating"
+                    layout="@layout/activity_housing_detail_house_title_price_num_saved"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/activity_housing_detail_house_title_price_rating_layout_left_right_margin"

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/fragment_profile_info_area_top_bottom_margin"
+        android:layout_marginBottom="@dimen/fragment_profile_info_area_top_bottom_margin">
+
+        <ImageView
+            android:id="@+id/fragment_profile_user_image"
+            android:layout_width="@dimen/fragment_profile_info_area_user_image_width_height"
+            android:layout_height="@dimen/fragment_profile_info_area_user_image_width_height"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/profile_image_2" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fragment_profile_info_area_space_between_user_image_and_username" />
+
+        <TextView
+            android:id="@+id/fragment_profile_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="SELENA GOMEZ"
+            android:textStyle="bold"
+            android:textSize="@dimen/fragment_profile_info_area_username_text_size"
+            android:textColor="@color/textColorPrimary" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fragment_profile_info_area_space_between_username_and_edit_profile" />
+
+        <TextView
+            android:id="@+id/fragment_profile_edit_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/fragment_profile_edit_profile"
+            android:textStyle="bold"
+            android:textSize="@dimen/fragment_profile_info_area_edit_profile_text_size"
+            android:textColor="@color/colorPrimary"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/ripple_effect_light_theme_default_background_color"
+            android:clickable="true" />
+
+    </LinearLayout>
+
+</RelativeLayout>

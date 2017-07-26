@@ -1,11 +1,9 @@
 package com.lmtri.sharespace.activity;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,9 +14,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GetTokenResult;
 import com.lmtri.sharespace.R;
+import com.lmtri.sharespace.customview.CustomEditText;
 import com.lmtri.sharespace.helper.BitmapLoader;
 import com.lmtri.sharespace.helper.BlurBuilder;
 import com.lmtri.sharespace.helper.Constants;
@@ -49,8 +46,8 @@ public class LoginActivity extends AppCompatActivity {
 
     // UI references.
     private ScrollView mScrollViewScreen;
-    private EditText mEmailView;
-    private EditText mPasswordView;
+    private CustomEditText mEmailView;
+    private CustomEditText mPasswordView;
     private Button mSigninButton;
     private TextView mSignupLink;
 
@@ -85,9 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                     });
                     Intent returnIntent = new Intent();
                     setResult(RESULT_OK, returnIntent);
-                    Log.d(TAG, "onAuthStateChanged: begin finish()");
                     finish();
-                    Log.d(TAG, "onAuthStateChanged: end finish()");
                 } else {
                     // User is signed out.
                     Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -110,9 +105,9 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         // Set up the login form.
-        mEmailView = (EditText) findViewById(R.id.email);
+        mEmailView = (CustomEditText) findViewById(R.id.email);
 
-        mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView = (CustomEditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -138,7 +133,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Start Signup activity.
                 Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-                startActivityForResult(intent, Constants.SIGNUP_REQUEST);
+                startActivityForResult(intent, Constants.START_ACTIVITY_SIGNUP_REQUEST);
                 overridePendingTransition(R.anim.push_left_in, R.anim.stay_still);
             }
         });
@@ -146,7 +141,7 @@ public class LoginActivity extends AppCompatActivity {
         mProgressDialog = new ProgressDialog(LoginActivity.this,
                 R.style.LoginProgressDialog);
         mProgressDialog.setIndeterminate(true);
-        mProgressDialog.setMessage("Authenticating...");
+        mProgressDialog.setMessage(getString(R.string.sign_in_authenticating));
         mProgressDialog.setCanceledOnTouchOutside(false);
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             mProgressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
@@ -264,7 +259,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == Constants.SIGNUP_REQUEST) {
+        if (requestCode == Constants.START_ACTIVITY_SIGNUP_REQUEST) {
             if (resultCode == RESULT_OK) {
                 // User signed up successfully and logged in.
                 finish();

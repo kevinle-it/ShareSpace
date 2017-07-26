@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/clouds">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_post_house_horizontal_line_height"
+        android:background="@color/silver_gray" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_post_house_section_text_left_margin"
+        android:layout_marginStart="@dimen/activity_post_house_section_text_left_margin"
+        android:layout_marginTop="@dimen/activity_post_house_section_text_top_bottom_margin"
+        android:layout_marginBottom="@dimen/activity_post_house_section_text_top_bottom_margin"
+        android:layout_gravity="center_vertical"
+        android:text="@string/activity_post_house_details_info_section"
+        android:textSize="@dimen/activity_post_house_section_text_size" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_post_house_horizontal_line_height"
+        android:background="@color/silver_gray" />
+
+</LinearLayout>

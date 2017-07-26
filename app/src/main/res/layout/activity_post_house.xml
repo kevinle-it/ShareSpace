@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lmtri.sharespace.activity.posthouse.PostHouseActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/activity_post_house_post_bar_layout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/activity_post_house_add_photo_container"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_post_house_add_photo_container_left_right_margin"
+                android:layout_marginStart="@dimen/activity_post_house_add_photo_container_left_right_margin"
+                android:layout_marginTop="@dimen/activity_post_house_add_photo_container_top_bottom_margin"
+                android:layout_marginRight="@dimen/activity_post_house_add_photo_container_left_right_margin"
+                android:layout_marginEnd="@dimen/activity_post_house_add_photo_container_left_right_margin"
+                android:layout_marginBottom="@dimen/activity_post_house_add_photo_container_top_bottom_margin">
+
+                <include
+                    layout="@layout/activity_post_house_add_profile_photo"
+                    android:id="@+id/activity_post_house_add_photo"
+                    android:layout_width="@dimen/activity_post_house_add_profile_photo_width_height"
+                    android:layout_height="@dimen/activity_post_house_add_profile_photo_width_height"
+                    android:layout_margin="@dimen/activity_post_house_add_profile_photo_margin" />
+
+            </LinearLayout>
+
+            <include
+                layout="@layout/activity_post_house_feature_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                layout="@layout/activity_post_house_house_type_field"
+                android:id="@+id/activity_post_house_house_type_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_post_house_field_container_left_margin"
+                android:layout_marginStart="@dimen/activity_post_house_field_container_left_margin" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_post_house_horizontal_line_height"
+                android:layout_marginLeft="@dimen/activity_post_house_horizontal_line_left_margin"
+                android:layout_marginStart="@dimen/activity_post_house_horizontal_line_left_margin"
+                android:background="@color/silver_gray" />
+
+            <include
+                layout="@layout/activity_post_house_area_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_post_house_field_container_left_margin"
+                android:layout_marginStart="@dimen/activity_post_house_field_container_left_margin" />
+
+            <include
+                layout="@layout/activity_post_house_location_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                layout="@layout/activity_post_house_address_field"
+                android:id="@+id/activity_post_house_address_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_post_house_field_container_left_margin"
+                android:layout_marginStart="@dimen/activity_post_house_field_container_left_margin" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_post_house_horizontal_line_height"
+                android:layout_marginLeft="@dimen/activity_post_house_horizontal_line_left_margin"
+                android:layout_marginStart="@dimen/activity_post_house_horizontal_line_left_margin"
+                android:background="@color/silver_gray"/>
+
+            <include
+                layout="@layout/activity_post_house_house_direction_field"
+                android:id="@+id/activity_post_house_house_direction_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_post_house_field_container_left_margin"
+                android:layout_marginStart="@dimen/activity_post_house_field_container_left_margin" />
+
+            <include
+                layout="@layout/activity_post_house_price_and_contact_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                layout="@layout/activity_post_house_price_field"
+                android:id="@+id/activity_post_house_price_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_post_house_field_container_left_margin"
+                android:layout_marginStart="@dimen/activity_post_house_field_container_left_margin" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_post_house_horizontal_line_height"
+                android:layout_marginLeft="@dimen/activity_post_house_horizontal_line_left_margin"
+                android:layout_marginStart="@dimen/activity_post_house_horizontal_line_left_margin"
+                android:background="@color/silver_gray"/>
+
+            <include
+                layout="@layout/activity_post_house_contact_field"
+                android:id="@+id/activity_post_house_contact_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_post_house_field_container_left_margin"
+                android:layout_marginStart="@dimen/activity_post_house_field_container_left_margin" />
+
+            <include
+                layout="@layout/activity_post_house_detailed_info_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                layout="@layout/activity_post_house_details_field"
+                android:id="@+id/activity_post_house_details_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_post_house_field_container_left_margin"
+                android:layout_marginStart="@dimen/activity_post_house_field_container_left_margin" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_post_house_horizontal_line_height"
+                android:background="@color/silver_gray" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_post_house_separated_section_height"
+                android:background="@color/clouds"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_post_house_horizontal_line_height"
+                android:background="@color/silver_gray" />
+
+            <include
+                layout="@layout/activity_post_house_reset_input"
+                android:id="@+id/activity_post_house_reset_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <include
+        layout="@layout/activity_post_house_post_bar"
+        android:id="@+id/activity_post_house_post_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

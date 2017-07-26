@@ -17,8 +17,11 @@
 
     <color name="white">#FFFFFF</color>
     <color name="white_trans">#99FFFFFF</color>
-    <color name="silver_gray">#c0c0c0</color>
+    <color name="silver_gray">#C0C0C0</color>
+    <color name="clouds">#ECF0F1</color>
+    <color name="light_red">#ff1418</color>
+    <color name="light_theme_default_background_color">#FAFAFA</color>
 
     <color name="nav_unchecked">#212121</color>
-    <color name="nav_checked">#dd2c00</color>
+    <color name="nav_checked">#DD2C00</color>
 </resources>

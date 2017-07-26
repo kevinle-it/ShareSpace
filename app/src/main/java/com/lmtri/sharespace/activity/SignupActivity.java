@@ -5,20 +5,16 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +25,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.lmtri.sharespace.R;
+import com.lmtri.sharespace.customview.CustomEditText;
 import com.lmtri.sharespace.helper.BitmapLoader;
 import com.lmtri.sharespace.helper.BlurBuilder;
 import com.lmtri.sharespace.helper.Constants;
@@ -48,10 +45,10 @@ public class SignupActivity extends AppCompatActivity {
 
     // UI references.
     private ScrollView mScrollViewScreen;
-    private EditText mEmailView;
-    private EditText mPasswordView;
-    private EditText mConfirmPasswordView;
-    private EditText mDOBView;
+    private CustomEditText mEmailView;
+    private CustomEditText mPasswordView;
+    private CustomEditText mConfirmPasswordView;
+    private CustomEditText mDOBView;
     private Button mSignupButton;
     private TextView mLoginLink;
 
@@ -99,12 +96,12 @@ public class SignupActivity extends AppCompatActivity {
         });
 
         // Set up the signup form.
-        mEmailView = (EditText) findViewById(R.id.email);
-        mPasswordView = (EditText) findViewById(R.id.password);
-        mConfirmPasswordView = (EditText) findViewById(R.id.confirm_password);
+        mEmailView = (CustomEditText) findViewById(R.id.email);
+        mPasswordView = (CustomEditText) findViewById(R.id.password);
+        mConfirmPasswordView = (CustomEditText) findViewById(R.id.confirm_password);
 
         // Set up DOB picker.
-        mDOBView = (EditText) findViewById(R.id.date_of_birth);
+        mDOBView = (CustomEditText) findViewById(R.id.date_of_birth);
         mCalendar = Calendar.getInstance();
         final DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
