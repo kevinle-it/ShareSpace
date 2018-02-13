@@ -10,6 +10,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
  */
 
 public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnScrollListener{
+    public static final String TAG = EndlessRecyclerViewScrollListener.class.getSimpleName();
     // The minimum amount of items to have below your current scroll position
     // before loading more.
     private int visibleThreshold = 5;
@@ -22,15 +23,22 @@ public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnS
     // Sets the starting page index
     private int startingPageIndex = 0;
 
+    RecyclerView mRecyclerView = null;
     RecyclerView.LayoutManager mLayoutManager;
 
-    public EndlessRecyclerViewScrollListener(LinearLayoutManager layoutManager) {
+    public EndlessRecyclerViewScrollListener(LinearLayoutManager layoutManager, boolean isSetVisibleThresholdForHousingAndShareHousingMainList) {
         this.mLayoutManager = layoutManager;
+        if (!isSetVisibleThresholdForHousingAndShareHousingMainList) {
+            visibleThreshold = 0;
+        }
     }
 
-    public EndlessRecyclerViewScrollListener(GridLayoutManager layoutManager) {
+    public EndlessRecyclerViewScrollListener(GridLayoutManager layoutManager, boolean isSetVisibleThresholdForHousingAndShareHousingList) {
         this.mLayoutManager = layoutManager;
         visibleThreshold = visibleThreshold * layoutManager.getSpanCount();
+        if (!isSetVisibleThresholdForHousingAndShareHousingList) {
+            visibleThreshold = 0;
+        }
     }
 
     public EndlessRecyclerViewScrollListener(StaggeredGridLayoutManager layoutManager) {
@@ -40,7 +48,7 @@ public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnS
 
     public int getLastVisibleItem(int[] lastVisibleItemPositions) {
         int maxSize = 0;
-        for (int i = 0; i < lastVisibleItemPositions.length; i++) {
+        for (int i = 0; i < lastVisibleItemPositions.length; ++i) {
             if (i == 0) {
                 maxSize = lastVisibleItemPositions[i];
             }
@@ -56,6 +64,9 @@ public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnS
     // but first we check if we are waiting for the previous load to finish.
     @Override
     public void onScrolled(RecyclerView view, int dx, int dy) {
+        if (mRecyclerView == null) {
+            mRecyclerView = view;
+        }
         int lastVisibleItemPosition = 0;
         int totalItemCount = mLayoutManager.getItemCount();
 

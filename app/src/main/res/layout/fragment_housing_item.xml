@@ -12,14 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/ripple_effect_light_theme_default_background_color_rounded_corners">
+        android:background="@drawable/ripple_effect_default_white_rounded_corners_housing_item">
 
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <com.lmtri.sharespace.customview.SquareImageView
-                android:id="@+id/fragment_housing_item_placeholder_house_profile_image"
+                android:id="@+id/fragment_housing_item_house_profile_image_placeholder"
                 android:layout_width="@dimen/fragment_housing_item_profile_image_view_width_height"
                 android:layout_height="@dimen/fragment_housing_item_profile_image_view_width_height"
                 android:scaleType="fitXY" />
@@ -49,40 +49,57 @@
                 android:text="SETTE CONI - TRULLO EDERA"
                 android:textStyle="bold"
                 android:textSize="@dimen/fragment_housing_item_house_title_text_size"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:ellipsize="end"
+                android:maxLines="1" />
 
             <TextView
-                android:id="@+id/fragment_housing_item_house_type_and_location_title"
+                android:id="@+id/fragment_housing_item_house_type"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:layout_marginBottom="@dimen/fragment_housing_item_info_bottom_margin"
-                android:text="Entire home in Ostuni"
+                android:text="Entire home"
                 android:textSize="@dimen/fragment_housing_item_house_type_and_location_title_text_size"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:ellipsize="end"
+                android:maxLines="1" />
 
-            <LinearLayout
-                android:orientation="horizontal"
+            <TextView
+                android:id="@+id/fragment_housing_item_house_location"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_marginBottom="@dimen/fragment_housing_item_info_bottom_margin">
+                android:layout_marginBottom="@dimen/fragment_housing_item_info_bottom_margin"
+                android:text="Ostuni"
+                android:textSize="@dimen/fragment_housing_item_house_type_and_location_title_text_size"
+                android:textColor="@android:color/black"
+                android:ellipsize="end"
+                android:maxLines="1" />
 
-                <ImageView
-                    android:layout_width="@dimen/fragment_housing_item_heart_image_width_height"
-                    android:layout_height="@dimen/fragment_housing_item_heart_image_width_height"
-                    android:src="@drawable/ic_heart_solid_red"/>
+            <!--<LinearLayout-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_marginBottom="@dimen/fragment_housing_item_info_bottom_margin">-->
 
-                <TextView
-                    android:id="@+id/fragment_housing_item_num_saved_textview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/fragment_housing_item_num_saved_left_margin"
-                    android:text="86 Saved"
-                    android:textSize="@dimen/fragment_housing_item_num_review_text_size"
-                    android:textColor="@android:color/black" />
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/fragment_housing_item_heart_image_width_height"-->
+                    <!--android:layout_height="@dimen/fragment_housing_item_heart_image_width_height"-->
+                    <!--android:src="@drawable/ic_heart_solid_red"/>-->
 
-            </LinearLayout>
+                <!--<TextView-->
+                    <!--android:id="@+id/fragment_housing_item_num_saved_text"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="@dimen/fragment_housing_item_num_saved_left_margin"-->
+                    <!--android:layout_marginStart="@dimen/fragment_housing_item_num_saved_left_margin"-->
+                    <!--android:text="86 Saved"-->
+                    <!--android:textSize="@dimen/fragment_housing_item_num_saved_text_size"-->
+                    <!--android:textColor="@android:color/black" />-->
+
+            <!--</LinearLayout>-->
 
             <TextView
                 android:id="@+id/fragment_housing_item_price"

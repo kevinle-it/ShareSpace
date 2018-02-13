@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_post_house_address_container"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.lmtri.sharespace.activity.posthouse.PostHouseAddressActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/activity_post_house_address_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/activity_post_house_address_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Nhập địa chỉ"
+                android:textColor="@color/white"
+                style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+            <TextView
+                android:id="@+id/activity_post_house_address_toolbar_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:text="Xong"
+                android:textColor="@color/white"
+                style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@drawable/ripple_effect_primary_color"
+                android:clickable="true" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <!--  House Number Label -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:hintTextAppearance="@android:style/TextAppearance">
+                <com.lmtri.sharespace.customview.CustomEditText
+                    android:id="@+id/activity_post_house_address_house_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Số nhà (VD: Hẻm 53, 53/1,...)"
+                    android:textColor="@color/textColorSecondary"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--  Street Label -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:hintTextAppearance="@android:style/TextAppearance">
+                <com.lmtri.sharespace.customview.CustomEditText
+                    android:id="@+id/activity_post_house_address_street"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Đường (VD: Nguyễn Huệ)"
+                    android:textColor="@color/textColorSecondary"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--  Ward Label -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:hintTextAppearance="@android:style/TextAppearance">
+                <com.lmtri.sharespace.customview.CustomEditText
+                    android:id="@+id/activity_post_house_address_ward"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phường/Xã (VD: Phường Bến Nghé)"
+                    android:textColor="@color/textColorSecondary"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!--  District Label -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:hintTextAppearance="@android:style/TextAppearance">
+                <com.lmtri.sharespace.customview.CustomEditText
+                    android:id="@+id/activity_post_house_address_district"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Quận/Huyện (VD: Quận 1)"
+                    android:textColor="@color/textColorSecondary"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapWords"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:id="@+id/dummy_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <!-- City Label -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:paddingTop="15dp"
+                android:text="Tỉnh/Thành phố"
+                android:textColor="@color/textColorSecondary"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <Spinner
+                android:id="@+id/activity_post_house_address_city_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="0dp"
+                android:paddingStart="0dp"
+                android:paddingTop="15dp"
+                android:paddingRight="0dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="15dp"
+                android:spinnerMode="dropdown"
+                android:entries="@array/activity_post_house_detailed_item_address_city_array"
+                android:theme="@style/SpinnerItem.SearchHouse"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+            <!-- Shown Address Label -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:paddingTop="15dp"
+                android:text="Địa chỉ hiển thị:"
+                android:textColor="@color/textColorSecondary"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <!-- Shown Address -->
+            <TextView
+                android:id="@+id/activity_post_house_address_shown_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:paddingTop="15dp"
+                android:text="[Shown Address]"
+                android:textColor="@color/textColorSecondary"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/silver_gray" />
+
+            <!-- Place Suggestion -->
+            <TextView
+                android:id="@+id/activity_post_house_address_place_suggestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:paddingTop="15dp"
+                android:text="Địa chỉ đề xuất: (Chọn 1 địa điểm thể hiện khu vực vị trí nhà bạn trên bản đồ)"
+                android:textColor="@color/textColorSecondary"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <Spinner
+                android:id="@+id/activity_post_house_address_place_suggestion_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="0dp"
+                android:paddingStart="0dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="15dp"
+                android:spinnerMode="dropdown"
+                android:theme="@style/SpinnerItem.SearchHouse"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+            <!-- Latitude Longitude Location -->
+            <TextView
+                android:id="@+id/activity_post_house_address_latitude_longitude_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:paddingLeft="3dp"
+                android:paddingTop="15dp"
+                android:text="[Location: Latitude, Longitude]"
+                android:textColor="@color/textColorSecondary"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+            <fragment
+                android:id="@+id/activity_post_house_address_support_map_fragment"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginBottom="24dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

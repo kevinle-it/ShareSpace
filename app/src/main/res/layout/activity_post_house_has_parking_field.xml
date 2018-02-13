@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:background="@drawable/ripple_effect_default_white"
+    android:clickable="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_post_house_inner_text_field_margin"
+        android:layout_gravity="center_vertical"
+        android:text="@string/activity_post_house_has_parking"
+        android:textSize="@dimen/activity_post_house_inner_text_field_text_size" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/activity_post_house_has_parking_check_mark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/activity_post_house_field_check_mark_right_margin"
+        android:layout_marginEnd="@dimen/activity_post_house_field_check_mark_right_margin"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_check_mark_thicker" />
+
+</LinearLayout>

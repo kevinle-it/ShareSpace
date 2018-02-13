@@ -7,9 +7,9 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_saved"
+        android:id="@+id/navigation_interested"
         android:icon="@drawable/ic_heart"
-        android:title="@string/title_saved" />
+        android:title="@string/title_interested" />
 
     <item
         android:id="@+id/navigation_share"
@@ -17,8 +17,8 @@
         android:title="@string/title_share" />
 
     <item
-        android:id="@+id/navigation_inbox"
-        android:icon="@drawable/ic_appointment"
+        android:id="@+id/navigation_schedule"
+        android:icon="@drawable/ic_notification"
         android:title="@string/title_appointment" />
 
     <item

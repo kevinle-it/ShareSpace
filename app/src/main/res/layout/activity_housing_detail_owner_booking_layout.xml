@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/activity_housing_detail_edit_post_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_housing_detail_booking_button_height"
+        android:layout_weight="1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="@drawable/ripple_effect_default_white"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_edit_darker_gray_thicker"
+            android:tint="@color/colorPrimary" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@color/clouds" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/activity_housing_detail_delete_housing_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_housing_detail_booking_button_height"
+        android:layout_weight="1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="@drawable/ripple_effect_default_white"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_remove"
+            android:tint="@color/colorPrimary" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -13,10 +13,57 @@
     </style>
 
     <style name="CustomEditTextTheme">
-        <!--<item name="colorControlNormal">#ff00ed</item>-->
+        <item name="colorControlNormal">@color/white</item>
         <item name="colorControlActivated">@color/white</item>
         <!--<item name="colorControlHighlight">#ab0000</item>-->
     </style>
+
+    <style name="CustomSpinnerTheme">
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+
+         Useless spinner Drop Down Item Style.
+        <!--<item name="android:spinnerDropDownItemStyle">@style/SpinnerItem.DropDownItem</item>-->
+
+         Underline Color and Arrow Background Color and Spinner Drop Down Selected Item
+         Background Color when pressed.
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+
+         Both Spinner Drop Down Item and Spinner Item Text Color (Spinner Text Color when opening and closing).
+         Default Color of this is also similar to 'textColorPrimary'.
+        <item name="android:textColor">@color/textColorPrimary</item>
+
+        <item name="android:textSize">18sp</item>
+
+         Underline Color when pressed.
+        <!--<item name="colorAccent">@color/colorPrimary</item>-->
+
+         Default color for the dropdown arrow and line.
+        <item name="colorControlNormal">@color/white</item>
+
+         Color when pressed - Override above colorAccent.
+        <!--<item name="colorControlActivated">@color/white</item>-->
+    </style>
+
+    <style name="SpinnerItem">
+         Spinner Text Color when closing - Override android:textColor of above Custom Spinner Theme.
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SpinnerItem.PostHouse">
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="SpinnerItem.SearchHouse">
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--<style name="SpinnerItem.DropDownItem">-->
+        <!--<item name="android:textColor">#FF0000</item>-->
+    <!--</style>-->
 
     <style name="LoginProgressDialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorControlActivated">@color/colorPrimaryLight</item>

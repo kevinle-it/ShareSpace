@@ -1,7 +1,6 @@
 package com.lmtri.sharespace;
 
 import android.content.Context;
-import android.util.Log;
 
 /**
  * Created by lmtri on 7/24/2017.
@@ -10,7 +9,7 @@ import android.util.Log;
 public class ApplicationContextSingleton {
     
     private static ApplicationContextSingleton mInstance;
-    private Context context;
+    private Context mContext;
 
     public static ApplicationContextSingleton getInstance() {
         if (mInstance == null) {
@@ -27,10 +26,10 @@ public class ApplicationContextSingleton {
     }
 
     public void initialize(Context context) {
-        this.context = context;
+        this.mContext = context;
     }
 
     public Context getApplicationContext() {
-        return context;
+        return mContext;
     }
 }

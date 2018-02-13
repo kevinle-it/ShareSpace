@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/fragment_search_housing_input_data_search_bar_reset_searching_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/fragment_search_housing_input_data_search_bar_text_padding"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="@string/fragment_search_housing_input_data_reset_searching_data"
+        android:textSize="@dimen/fragment_search_housing_input_data_search_bar_text_size"
+        android:textColor="@color/textColorSecondary"
+        android:textStyle="bold"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="@drawable/ripple_effect_white"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/fragment_search_housing_input_data_search_bar_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/fragment_search_housing_input_data_search_bar_text_padding"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="@string/fragment_search_housing_input_data_search"
+        android:textSize="@dimen/fragment_search_housing_input_data_search_bar_text_size"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="@drawable/ripple_effect_white"
+        android:clickable="true" />
+
+</RelativeLayout>

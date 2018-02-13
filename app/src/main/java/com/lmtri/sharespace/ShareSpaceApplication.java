@@ -1,7 +1,9 @@
 package com.lmtri.sharespace;
 
 import android.app.Application;
-import android.util.Log;
+
+import com.squareup.otto.Bus;
+import com.squareup.otto.ThreadEnforcer;
 
 /**
  * Created by lmtri on 7/24/2017.
@@ -9,6 +11,7 @@ import android.util.Log;
 
 public class ShareSpaceApplication extends Application {
 
+    public static Bus BUS = new Bus(ThreadEnforcer.ANY);
     @Override
     public void onCreate() {
         super.onCreate();

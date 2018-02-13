@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:foreground="?android:attr/selectableItemBackground"
-    android:background="@drawable/ripple_effect_light_theme_default_background_color"
+    android:background="@drawable/ripple_effect_default_white"
     android:clickable="true">
 
     <TextView
@@ -16,17 +16,24 @@
         android:textSize="@dimen/activity_post_house_inner_text_field_text_size" />
 
     <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_width="@dimen/activity_post_house_space_between_text_field_and_type"
+        android:layout_height="0dp" />
 
     <TextView
         android:id="@+id/activity_post_house_house_direction_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:layout_gravity="center_vertical"
-        android:text="@string/activity_post_house_detailed_item_house_direction_arbitrary"
-        android:textSize="@dimen/activity_post_house_inner_type_text_size" />
+        android:gravity="end"
+        android:text="@string/activity_post_house_detailed_item_house_direction_any"
+        android:textSize="@dimen/activity_post_house_inner_type_text_size"
+        android:textColor="@color/textColorDisabledHint"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:freezesText="true" />
 
     <ImageView
         android:layout_width="@dimen/activity_post_house_right_arrow_field_width_height"

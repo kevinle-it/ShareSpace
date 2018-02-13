@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <Spinner
+        android:id="@+id/activity_post_house_detailed_item_city_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_post_house_detailed_item_address_city_spinner_left_right_padding"
+        android:paddingRight="@dimen/activity_post_house_detailed_item_address_city_spinner_left_right_padding"
+        android:paddingBottom="10dp"
+        android:spinnerMode="dropdown"
+        android:entries="@array/activity_post_house_detailed_item_address_city_array"
+        android:theme="@style/SpinnerItem.PostHouse"
+        style="@style/Widget.AppCompat.Spinner.Underlined" />
+
+</FrameLayout>

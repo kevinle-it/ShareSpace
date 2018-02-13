@@ -1,6 +1,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/signup_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,12 +23,45 @@
             android:layout_marginBottom="@dimen/activity_signup_share_space_logo_bottom_margin"
             android:layout_gravity="center_horizontal" />
 
-        <!-- Dummy item to prevent AutoCompleteTextView from receiving focus -->
-        <LinearLayout
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:layout_width="0px"
-            android:layout_height="0px" />
+        <!--  Last Name Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_signup_input_top_bottom_margin"
+            android:layout_marginBottom="@dimen/activity_signup_input_top_bottom_margin"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.TextInputLayout"
+            android:textColorHint="@color/white">
+            <com.lmtri.sharespace.customview.CustomEditText
+                android:id="@+id/last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/CustomEditTextTheme"
+                android:hint="@string/hint_signup_last_name"
+                android:textColor="@color/white"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  First Name Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_signup_input_top_bottom_margin"
+            android:layout_marginBottom="@dimen/activity_signup_input_top_bottom_margin"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.TextInputLayout"
+            android:textColorHint="@color/white">
+            <com.lmtri.sharespace.customview.CustomEditText
+                android:id="@+id/first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/CustomEditTextTheme"
+                android:hint="@string/hint_signup_first_name"
+                android:textColor="@color/white"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
 
         <!--  Email Label -->
         <android.support.design.widget.TextInputLayout
@@ -38,18 +71,16 @@
             android:layout_marginBottom="@dimen/activity_signup_input_top_bottom_margin"
             app:hintTextAppearance="@style/TextAppearance.AppCompat.TextInputLayout"
             android:textColorHint="@color/white">
-            <!-- :nextFocusUp and :nextFocusLeft have been set to the id of this component
-            to prevent the dummy from receiving focus again -->
             <com.lmtri.sharespace.customview.CustomEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/CustomEditTextTheme"
                 android:hint="@string/hint_signup_email"
+                android:textColor="@color/white"
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:nextFocusUp="@id/email"
-                android:nextFocusLeft="@id/email" />
+                android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Password Label -->
@@ -64,7 +95,9 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/CustomEditTextTheme"
                 android:hint="@string/hint_signup_password"
+                android:textColor="@color/white"
                 android:imeOptions="actionNext"
                 android:inputType="textPassword"
                 android:maxLines="1" />
@@ -82,9 +115,31 @@
                 android:id="@+id/confirm_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/CustomEditTextTheme"
                 android:hint="@string/hint_signup_confirm_password"
+                android:textColor="@color/white"
                 android:imeOptions="actionNext"
                 android:inputType="textPassword"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Phone Number Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_signup_input_top_bottom_margin"
+            android:layout_marginBottom="@dimen/activity_signup_input_top_bottom_margin"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.TextInputLayout"
+            android:textColorHint="@color/white">
+            <com.lmtri.sharespace.customview.CustomEditText
+                android:id="@+id/phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/CustomEditTextTheme"
+                android:hint="@string/hint_signup_phone_number"
+                android:textColor="@color/white"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
                 android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
 
@@ -100,9 +155,54 @@
                 android:id="@+id/date_of_birth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/CustomEditTextTheme"
                 android:hint="@string/hint_signup_date_of_birth"
+                android:textColor="@color/white"
                 android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
+
+        <View
+            android:id="@+id/dob_dummy_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <!-- Gender Label -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/activity_signup_gender_text_left_padding"
+                android:paddingTop="@dimen/activity_signup_gender_text_top_bottom_padding"
+                android:paddingBottom="@dimen/activity_signup_gender_text_top_bottom_padding"
+                android:layout_weight="1"
+                android:text="@string/hint_signup_gender"
+                android:textSize="@dimen/activity_signup_gender_text_size"
+                android:textColor="@color/white" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Spinner
+                    android:id="@+id/gender_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/activity_signup_gender_spinner_padding"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/hint_signup_gender_array"
+                    android:theme="@style/CustomSpinnerTheme"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
 
         <!-- Signup Button -->
         <Button
@@ -119,7 +219,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_signup_login_link_bottom_margin"
+            android:padding="@dimen/activity_signup_login_link_padding"
             android:text="@string/login_link"
+            android:textColor="@color/white"
             android:gravity="center"
             android:textSize="@dimen/activity_signup_login_link_text_size" />
 

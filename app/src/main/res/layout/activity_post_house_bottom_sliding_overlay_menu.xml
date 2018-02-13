@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_post_house_bottom_sliding_overlay_menu_left_right_margin"
+        android:layout_marginStart="@dimen/activity_post_house_bottom_sliding_overlay_menu_left_right_margin"
+        android:layout_marginRight="@dimen/activity_post_house_bottom_sliding_overlay_menu_left_right_margin"
+        android:layout_marginEnd="@dimen/activity_post_house_bottom_sliding_overlay_menu_left_right_margin">
+
+        <TextView
+            android:id="@+id/activity_post_house_bottom_sliding_overlay_menu_camera_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/activity_post_house_bottom_sliding_overlay_menu_text_padding"
+            android:text="@string/activity_post_house_bottom_sliding_overlay_menu_camera"
+            android:textSize="@dimen/activity_post_house_bottom_sliding_overlay_menu_text_size"
+            android:textColor="@color/colorPrimary"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/ripple_effect_rounded_bottom_sliding_overlay_menu_top_option"
+            android:clickable="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_post_house_horizontal_line_height"
+            android:background="@color/silver_gray" />
+
+        <TextView
+            android:id="@+id/activity_post_house_bottom_sliding_overlay_menu_gallery_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/activity_post_house_bottom_sliding_overlay_menu_text_padding"
+            android:text="@string/activity_post_house_bottom_sliding_overlay_menu_gallery"
+            android:textSize="@dimen/activity_post_house_bottom_sliding_overlay_menu_text_size"
+            android:textColor="@color/colorPrimary"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/ripple_effect_rounded_bottom_sliding_overlay_menu_bottom_option"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_post_house_bottom_sliding_overlay_menu_space_between_options_and_cancel" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_post_house_bottom_sliding_overlay_menu_left_right_margin"
+        android:layout_marginStart="@dimen/activity_post_house_bottom_sliding_overlay_menu_left_right_margin"
+        android:layout_marginRight="@dimen/activity_post_house_bottom_sliding_overlay_menu_left_right_margin"
+        android:layout_marginEnd="@dimen/activity_post_house_bottom_sliding_overlay_menu_left_right_margin">
+
+        <TextView
+            android:id="@+id/activity_post_house_bottom_sliding_overlay_menu_cancel_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/activity_post_house_bottom_sliding_overlay_menu_text_padding"
+            android:text="@string/activity_post_house_bottom_sliding_overlay_menu_cancel"
+            android:textStyle="bold"
+            android:textSize="@dimen/activity_post_house_bottom_sliding_overlay_menu_text_size"
+            android:textColor="@color/colorPrimary"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/ripple_effect_rounded_bottom_sliding_overlay_menu_cancel_option"
+            android:clickable="true"/>
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_post_house_bottom_sliding_overlay_menu_space_bottom_screen" />
+
+</LinearLayout>

@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,17 +22,26 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GetTokenResult;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.lmtri.sharespace.R;
+import com.lmtri.sharespace.ShareSpaceApplication;
+import com.lmtri.sharespace.api.model.User;
+import com.lmtri.sharespace.api.service.RetrofitClient;
+import com.lmtri.sharespace.api.service.user.IGetUserInfoCallback;
+import com.lmtri.sharespace.api.service.user.UserClient;
 import com.lmtri.sharespace.customview.CustomEditText;
 import com.lmtri.sharespace.helper.BitmapLoader;
 import com.lmtri.sharespace.helper.BlurBuilder;
 import com.lmtri.sharespace.helper.Constants;
 import com.lmtri.sharespace.helper.KeyboardHelper;
+import com.lmtri.sharespace.helper.busevent.SigninEvent;
+import com.lmtri.sharespace.helper.busevent.SignoutEvent;
 
 /**
  * A login screen that offers login via email/password.
@@ -46,8 +56,11 @@ public class LoginActivity extends AppCompatActivity {
 
     // UI references.
     private ScrollView mScrollViewScreen;
+
+    private View mDummyView;
     private CustomEditText mEmailView;
     private CustomEditText mPasswordView;
+
     private Button mSigninButton;
     private TextView mSignupLink;
 
@@ -68,10 +81,50 @@ public class LoginActivity extends AppCompatActivity {
                     // User is signed in.
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
 
-                    user.getIdToken(false).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+                    try {
+                        UserClient.getUserInfo(
+                                FirebaseInstanceId.getInstance().getToken(),
+                                new IGetUserInfoCallback() {
+                                    @Override
+                                    public void onGetUserInfoSuccess(User user) {
+                                        mProgressDialog.dismiss();
+                                        mSigninButton.setEnabled(true);
+
+                                        if (user != null) {
+                                            Constants.CURRENT_USER = user;
+                                            Constants.CONTACT_NAME
+                                                    = !TextUtils.isEmpty(user.getLastName())
+                                                    ? user.getLastName() + " " + user.getFirstName()
+                                                    : user.getFirstName();
+                                            Constants.CONTACT_NUMBER = user.getPhoneNumber();
+                                            Constants.CONTACT_EMAIL = user.getEmail();
+
+                                            ShareSpaceApplication.BUS.post(new SigninEvent(user));
+
+                                            setResult(RESULT_OK);
+                                            finish();
+                                        } else {
+                                            mAuth.signOut();
+                                            ShareSpaceApplication.BUS.post(new SignoutEvent());
+                                            RetrofitClient.showShareSpaceServerConnectionErrorDialog(LoginActivity.this);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onGetUserInfoFailure(Throwable t) {
+                                        RetrofitClient.showShareSpaceServerConnectionErrorDialog(LoginActivity.this, t);
+                                    }
+                                }
+                        );
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    // getIdToken(boolean b) -> Whether forcing User's Token
+                    // to be refreshed (even if it hasn't expired yet) or not.
+                    user.getIdToken(false).addOnSuccessListener(new OnSuccessListener<GetTokenResult>() {
                         @Override
-                        public void onComplete(@NonNull Task<GetTokenResult> task) {
-                            String idToken = task.getResult().getToken();
+                        public void onSuccess(GetTokenResult getTokenResult) {
+                            String idToken = getTokenResult.getToken();
                             Log.d(TAG, "onAuthStateChanged: ID Token: " + idToken);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
@@ -80,12 +133,13 @@ public class LoginActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     });
-                    Intent returnIntent = new Intent();
-                    setResult(RESULT_OK, returnIntent);
-                    finish();
                 } else {
                     // User is signed out.
                     Log.d(TAG, "onAuthStateChanged:signed_out");
+
+                    mProgressDialog.dismiss();
+                    mSigninButton.setEnabled(true);
+                    Constants.CURRENT_USER = null;
                 }
             }
         };
@@ -103,15 +157,40 @@ public class LoginActivity extends AppCompatActivity {
                 mScrollViewScreen.setBackground(new BitmapDrawable(getResources(), blurredLoginBackground));
             }
         });
+        // Remove auto-focus from all Edit Texts.
+        mScrollViewScreen.requestFocus();
+
+        mDummyView = findViewById(R.id.dummy_view);
 
         // Set up the login form.
         mEmailView = (CustomEditText) findViewById(R.id.email);
-
+        mEmailView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    if (mEmailView.getError() != null) {
+                        mEmailView.setError(null);
+                    }
+                    mDummyView.requestFocus();
+                }
+            }
+        });
         mPasswordView = (CustomEditText) findViewById(R.id.password);
+        mPasswordView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    if (mPasswordView.getError() != null) {
+                        mPasswordView.setError(null);
+                    }
+                    mDummyView.requestFocus();
+                }
+            }
+        });
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == EditorInfo.IME_ACTION_DONE) {
+            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
                     attemptLogin();
                     return true;
                 }
@@ -131,6 +210,10 @@ public class LoginActivity extends AppCompatActivity {
         mSignupLink.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Reset errors.
+                mEmailView.setError(null);
+                mPasswordView.setError(null);
+
                 // Start Signup activity.
                 Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivityForResult(intent, Constants.START_ACTIVITY_SIGNUP_REQUEST);
@@ -155,11 +238,19 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onPause() {
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+        super.onStop();
     }
 
     /**
@@ -169,7 +260,7 @@ public class LoginActivity extends AppCompatActivity {
      */
     private void attemptLogin() {
         // Hide Soft Keyboard.
-        KeyboardHelper.hideSoftKeyboard(this);
+        KeyboardHelper.hideSoftKeyboard(this, true);
 
         // Disable Signin Button to perform Authentication.
         mSigninButton.setEnabled(false);
@@ -225,13 +316,29 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
 
-                            mProgressDialog.dismiss();
-                            mSigninButton.setEnabled(true);
+                            // This listener will execute after mAuthListener.
 
                             // Login failed.
                             if (!task.isSuccessful()) {
                                 Log.w(TAG, "signInWithEmail:failed", task.getException());
-                                Toast.makeText(getApplicationContext(), getString(R.string.error_login_failed), Toast.LENGTH_SHORT).show();
+                                Toast toast = Toast.makeText(
+                                        getApplicationContext(),
+                                        getString(R.string.error_login_failed),
+                                        Toast.LENGTH_SHORT
+                                );
+                                TextView message = (TextView) toast.getView()
+                                        .findViewById(android.R.id.message);
+                                if (message != null) {
+                                    message.setGravity(Gravity.CENTER);
+                                    message.setLineSpacing(
+                                            getResources().getDimensionPixelSize(R.dimen.activity_login_error_login_signup_failed_message_line_spacing),
+                                            1.0f
+                                    );
+                                }
+                                toast.show();
+
+                                mProgressDialog.dismiss();
+                                mSigninButton.setEnabled(true);
                                 return;
                             }
                         }
@@ -246,15 +353,17 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() >= Constants.REQUIRED_PASSWORD_LENGTH;
+        return password.length() >= Constants.REQUIRED_MIN_PASSWORD_LENGTH;
     }
 
     @Override
     public void onBackPressed() {
+        // Reset errors.
         mEmailView.setError(null);
         mPasswordView.setError(null);
         // Disable going back to the MainActivity.
-        moveTaskToBack(true);
+//        moveTaskToBack(true);
+        super.onBackPressed();
     }
 
     @Override
@@ -262,6 +371,7 @@ public class LoginActivity extends AppCompatActivity {
         if (requestCode == Constants.START_ACTIVITY_SIGNUP_REQUEST) {
             if (resultCode == RESULT_OK) {
                 // User signed up successfully and logged in.
+                setResult(RESULT_OK);
                 finish();
             }
         }

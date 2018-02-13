@@ -1,0 +1,87 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lmtri.sharespace.fragment.appointment.HousingAppointmentTabFragment">
+
+    <!--<android.support.design.widget.CoordinatorLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<android.support.v4.widget.SwipeRefreshLayout-->
+            <!--android:id="@+id/fragment_housing_appointment_tab_swipe_refresh_container"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+            <!---->
+
+        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+    <!--</android.support.design.widget.CoordinatorLayout>-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/fragment_housing_appointment_tab_home_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/fragment_housing_list_left_right_margin"
+        android:layout_marginRight="@dimen/fragment_housing_list_left_right_margin"
+        android:clipToPadding="false"
+        tools:listitem="@layout/fragment_housing_appointment_item"
+        app:layoutManager="LinearLayoutManager" />
+
+    <LinearLayout
+        android:id="@+id/fragment_housing_appointment_tab_connection_error_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/fragment_housing_appointment_tab_connection_error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/fragment_tab_empty"
+            android:textColor="@color/textColorDisabledHint"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+        <ViewSwitcher
+            android:id="@+id/fragment_housing_appointment_tab_view_switcher_retry_connect_to_server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/fragment_housing_list_view_switcher_padding">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <FrameLayout
+                android:id="@+id/fragment_housing_appointment_tab_retry_button"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/fragment_housing_list_retry_button_height"
+                android:layout_gravity="center"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@drawable/ripple_effect_primary_color"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingLeft="@dimen/fragment_housing_list_retry_button_text_left_right_padding"
+                    android:paddingRight="@dimen/fragment_housing_list_retry_button_text_left_right_padding"
+                    android:text="@string/cannot_connect_to_share_space_server_retry_button"
+                    android:textColor="@color/default_white"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+            </FrameLayout>
+
+        </ViewSwitcher>
+
+    </LinearLayout>
+
+</FrameLayout>

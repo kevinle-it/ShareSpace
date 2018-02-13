@@ -27,18 +27,18 @@
             android:layout_height="wrap_content">
 
             <include
-                layout="@layout/fragment_profile_post_history"
+                layout="@layout/fragment_profile_history_post"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <View
-                android:layout_width="@dimen/fragment_profile_option_vertical_line_width"
+                android:layout_width="@dimen/fragment_profile_options_vertical_line_width"
                 android:layout_height="match_parent"
                 android:background="@color/silver_gray" />
 
             <include
-                layout="@layout/fragment_profile_notes"
+                layout="@layout/fragment_profile_history_note"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -51,18 +51,18 @@
             android:layout_height="wrap_content">
 
             <include
-                layout="@layout/fragment_profile_photo_album"
+                layout="@layout/fragment_profile_history_photo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <View
-                android:layout_width="@dimen/fragment_profile_option_vertical_line_width"
+                android:layout_width="@dimen/fragment_profile_options_vertical_line_width"
                 android:layout_height="match_parent"
                 android:background="@color/silver_gray" />
 
             <include
-                layout="@layout/fragment_profile_settings"
+                layout="@layout/fragment_profile_signin_signout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />

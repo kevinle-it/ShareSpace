@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foreground="?android:attr/selectableItemBackground"
-    android:background="@drawable/ripple_effect_light_theme_default_background_color"
+    android:background="@drawable/ripple_effect_default_white"
     android:clickable="true">
 
     <TextView

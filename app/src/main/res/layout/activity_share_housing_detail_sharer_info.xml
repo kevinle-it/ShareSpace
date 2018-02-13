@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/activity_share_housing_detail_sharer_profile_image_placeholder"
+            android:layout_width="@dimen/activity_housing_detail_house_owner_image_width_height"
+            android:layout_height="@dimen/activity_housing_detail_house_owner_image_width_height"
+            android:layout_marginRight="@dimen/activity_housing_detail_house_owner_image_right_margin" />
+
+        <ImageView
+            android:id="@+id/activity_share_housing_detail_sharer_profile_image"
+            android:layout_width="@dimen/activity_housing_detail_house_owner_image_width_height"
+            android:layout_height="@dimen/activity_housing_detail_house_owner_image_width_height"
+            android:layout_marginRight="@dimen/activity_housing_detail_house_owner_image_right_margin" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_housing_detail_house_type_left_margin"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/activity_share_housing_detail_sharer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="@dimen/activity_housing_detail_house_host_text_size"
+            android:textColor="@color/textColorSecondary" />
+
+        <TextView
+            android:id="@+id/activity_share_housing_detail_sharer_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_housing_detail_house_owner_email"
+            android:textSize="@dimen/activity_housing_detail_house_host_text_size"
+            android:textColor="@color/textColorSecondary" />
+
+    </LinearLayout>
+
+</LinearLayout>

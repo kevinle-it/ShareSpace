@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_housing_detail_user_photo_section_bottom_margin"
+        android:text="@string/activity_housing_detail_user_photo_section"
+        android:textStyle="bold"
+        android:textColor="@color/textColorPrimary"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+    <GridLayout
+        android:id="@+id/activity_housing_detail_photo_grid_container"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_housing_detail_horizontal_line_height"
+        android:layout_marginTop="@dimen/activity_housing_detail_horizontal_line_top_bottom_margin"
+        android:layout_marginBottom="@dimen/activity_housing_detail_horizontal_line_top_bottom_margin"
+        android:background="@color/silver_gray" />
+
+</LinearLayout>

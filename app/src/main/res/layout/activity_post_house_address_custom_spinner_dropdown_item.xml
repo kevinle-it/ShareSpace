@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/activity_post_house_address_custom_spinner_dropdown_item_primary_place_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="2dp"
+        android:text="Primary Place Info"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="16sp"
+        android:ellipsize="marquee"
+        android:maxLines="1"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/activity_post_house_address_custom_spinner_dropdown_item_secondary_place_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingStart="5dp"
+        android:paddingTop="2dp"
+        android:paddingRight="5dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="5dp"
+        android:text="Secondary Place Info"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="14sp"
+        android:ellipsize="marquee"
+        android:maxLines="1"
+        android:singleLine="true" />
+
+</LinearLayout>

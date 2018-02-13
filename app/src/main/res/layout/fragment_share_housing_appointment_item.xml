@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/fragment_housing_item_card_view_corner_radius"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/fragment_housing_item_card_view_elevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/ripple_effect_default_white_rounded_corners_housing_item">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.lmtri.sharespace.customview.SquareImageView
+                android:id="@+id/fragment_share_housing_appointment_item_house_profile_image_placeholder"
+                android:layout_width="@dimen/fragment_housing_item_profile_image_view_width_height"
+                android:layout_height="@dimen/fragment_housing_item_profile_image_view_width_height"
+                android:scaleType="fitXY" />
+
+            <com.lmtri.sharespace.customview.SquareImageView
+                android:id="@+id/fragment_share_housing_appointment_item_house_profile_image"
+                android:layout_width="@dimen/fragment_housing_item_profile_image_view_width_height"
+                android:layout_height="@dimen/fragment_housing_item_profile_image_view_width_height"
+                android:scaleType="fitXY" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/fragment_housing_item_all_info_left_margin">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fragment_share_housing_appointment_item_house_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:text="SETTE CONI - TRULLO EDERA"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/fragment_housing_item_house_title_text_size"
+                    android:textColor="@android:color/black"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <TextView
+                        android:id="@+id/fragment_share_housing_appointment_item_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="đ1,500,000"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/fragment_housing_item_price_text_size"
+                        android:textColor="@color/colorSecondary"
+                        android:ellipsize="end"
+                        android:maxLines="1" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="3dp"
+                        android:paddingStart="3dp">
+
+                        <ImageView
+                            android:layout_width="@dimen/fragment_share_housing_item_requirement_icon_width_height"
+                            android:layout_height="@dimen/fragment_share_housing_item_requirement_icon_width_height"
+                            android:src="@drawable/ic_gender"/>
+
+                        <TextView
+                            android:id="@+id/fragment_share_housing_appointment_item_gender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginStart="3dp"
+                            android:text="Male"
+                            android:textSize="@dimen/fragment_share_housing_item_requirement_text_size"
+                            android:textColor="@android:color/black"
+                            android:ellipsize="end"
+                            android:maxLines="1" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/fragment_share_housing_appointment_item_share_housing_appointment_date_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Appointment Date Time"
+                        android:textSize="@dimen/fragment_housing_item_house_type_and_location_title_text_size"
+                        android:textColor="@android:color/black"
+                        android:ellipsize="end"
+                        android:maxLines="2" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="3dp"
+                        android:paddingStart="3dp">
+
+                        <ImageView
+                            android:layout_width="@dimen/fragment_share_housing_item_requirement_icon_width_height"
+                            android:layout_height="@dimen/fragment_share_housing_item_requirement_icon_width_height"
+                            android:src="@drawable/ic_people"/>
+
+                        <TextView
+                            android:id="@+id/fragment_share_housing_appointment_item_num_people"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginStart="3dp"
+                            android:text="2 people"
+                            android:textSize="@dimen/fragment_share_housing_item_requirement_text_size"
+                            android:textColor="@android:color/black"
+                            android:ellipsize="end"
+                            android:maxLines="2" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/fragment_share_housing_appointment_item_appointment_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="Note: 50 characters limited."
+                    android:textSize="@dimen/fragment_housing_item_price_text_size"
+                    android:ellipsize="end"
+                    android:maxLines="2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:paddingRight="3dp">
+
+                        <ImageView
+                            android:id="@+id/fragment_share_housing_appointment_item_reject_button"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:padding="3dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:background="@drawable/reject_appointment_button_border"
+                            android:src="@drawable/ic_cross" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2">
+
+                        <ImageView
+                            android:id="@+id/fragment_share_housing_appointment_item_send_receive_sign"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/ic_send"
+                            android:tint="@color/colorPrimary" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginRight="3dp"
+                    android:background="@color/silver_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/fragment_share_housing_appointment_item_accept_button_left_vertical_border_line"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/silver_gray" />
+
+                    <ImageView
+                        android:id="@+id/fragment_share_housing_appointment_item_accept_button"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_check_mark_thicker" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/silver_gray" />
+
+                    <ImageView
+                        android:id="@+id/fragment_share_housing_appointment_item_edit_button"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_edit_darker_gray_thicker" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

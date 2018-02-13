@@ -38,6 +38,29 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/activity_housing_detail_availability_icon_padding"
             android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_room"/>
+
+        <TextView
+            android:id="@+id/activity_housing_detail_num_room_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="2 phòng"
+            android:textSize="@dimen/activity_housing_detail_availability_text_size"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_housing_detail_availability_icon_padding"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/ic_bed"/>
 
         <TextView
@@ -68,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="2 phòng tắm"
+            android:text="2 WC"
             android:textSize="@dimen/activity_housing_detail_availability_text_size"/>
 
     </LinearLayout>

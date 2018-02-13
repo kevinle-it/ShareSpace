@@ -20,7 +20,8 @@
     <color name="silver_gray">#C0C0C0</color>
     <color name="clouds">#ECF0F1</color>
     <color name="light_red">#ff1418</color>
-    <color name="light_theme_default_background_color">#FAFAFA</color>
+    <color name="default_white">#FAFAFA</color>     light theme default background color
+    <color name="light_blue">#03A9F4</color>
 
     <color name="nav_unchecked">#212121</color>
     <color name="nav_checked">#DD2C00</color>

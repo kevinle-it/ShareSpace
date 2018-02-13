@@ -1,0 +1,616 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lmtri.sharespace.fragment.share.search.SearchShareHousingInputDataFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fragment_search_housing_input_data_search_bar_card_view">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/fragment_search_housing_input_data_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:minHeight="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/fragment_search_housing_input_data_toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/fragment_search_share_housing_input_data_toolbar_title"
+                    android:textColor="@color/white"
+                    style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/fragment_search_housing_input_data_content_left_right_margin"
+                android:layout_marginStart="@dimen/fragment_search_housing_input_data_content_left_right_margin"
+                android:layout_marginRight="@dimen/fragment_search_housing_input_data_content_left_right_margin"
+                android:layout_marginEnd="@dimen/fragment_search_housing_input_data_content_left_right_margin">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_housing_input_data_location_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_places_autocomplete_top_margin">
+
+                    <fragment
+                        android:id="@+id/fragment_search_housing_input_data_places_autocomplete_fragment"
+                        android:name="com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/fragment_search_housing_input_data_radius"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_housing_input_data_radius_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <SeekBar
+                    android:id="@+id/fragment_search_housing_input_data_radius_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_seekbar_top_margin"
+                    android:max="15"
+                    android:progress="5"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_housing_input_data_keyword_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_search_housing_input_data_horizontal_line_height"
+                    android:background="@color/silver_gray" />
+
+                <com.lmtri.sharespace.customview.CustomEditText
+                    android:id="@+id/fragment_search_housing_input_data_key_word_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/fragment_search_share_housing_input_data_keyword_input_hint_section"
+                    android:textColor="@color/textColorSecondary"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:imeOptions="actionDone"
+                    android:maxLines="1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_housing_input_data_house_type_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <LinearLayout
+                    android:id="@+id/fragment_search_housing_input_data_house_type_layout"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_house_type_amenities_option_top_margin"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:background="@drawable/ripple_effect_default_white"
+                    android:clickable="true">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/fragment_search_housing_input_data_house_types"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/fragment_search_housing_input_data_house_type_any"
+                            android:textSize="@dimen/fragment_search_housing_input_data_house_type_amenities_option_text_size"
+                            android:textColor="@color/colorPrimary" />
+
+                        <View
+                            android:layout_width="@dimen/fragment_search_housing_input_data_vertical_line_width"
+                            android:layout_height="match_parent"
+                            android:background="@color/silver_gray" />
+
+                        <ImageView
+                            android:layout_width="@dimen/fragment_search_housing_input_data_multiple_options_icon_width_height"
+                            android:layout_height="@dimen/fragment_search_housing_input_data_multiple_options_icon_width_height"
+                            android:layout_marginLeft="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginStart="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginTop="@dimen/fragment_search_housing_input_data_multiple_options_icon_top_bottom_margin"
+                            android:layout_marginRight="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginEnd="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginBottom="@dimen/fragment_search_housing_input_data_multiple_options_icon_top_bottom_margin"
+                            android:src="@drawable/ic_multiple_options" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/fragment_search_housing_input_data_horizontal_line_height"
+                        android:background="@color/silver_gray" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_share_housing_input_data_price_per_month_of_one_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/fragment_search_housing_input_data_min_price_per_month_of_one_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:paddingLeft="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingStart="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingRight="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingEnd="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:spinnerMode="dropdown"
+                        android:theme="@style/SpinnerItem.SearchHouse"
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/fragment_search_housing_input_data_em_dash_between_spinners"
+                        android:textSize="@dimen/fragment_search_housing_input_data_em_dash_between_spinners_text_size"
+                        android:textColor="@color/textColorPrimary" />
+
+                    <Spinner
+                        android:id="@+id/fragment_search_housing_input_data_max_price_per_month_of_one_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:paddingLeft="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingStart="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingRight="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingEnd="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:spinnerMode="dropdown"
+                        android:theme="@style/SpinnerItem.SearchHouse"
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_housing_input_data_area_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/fragment_search_housing_input_data_min_area_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:paddingLeft="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingStart="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingRight="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingEnd="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:spinnerMode="dropdown"
+                        android:theme="@style/SpinnerItem.SearchHouse"
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/fragment_search_housing_input_data_em_dash_between_spinners"
+                        android:textSize="@dimen/fragment_search_housing_input_data_em_dash_between_spinners_text_size"
+                        android:textColor="@color/textColorPrimary" />
+
+                    <Spinner
+                        android:id="@+id/fragment_search_housing_input_data_max_area_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:paddingLeft="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingStart="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingRight="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingEnd="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:spinnerMode="dropdown"
+                        android:theme="@style/SpinnerItem.SearchHouse"
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_num_picker_section_top_margin"
+                    android:text="@string/fragment_search_housing_input_data_num_people_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <include
+                    layout="@layout/fragment_search_housing_input_data_number_picker"
+                    android:id="@+id/fragment_search_housing_input_data_number_picker_num_people_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_num_picker_layout_top_margin" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_housing_input_data_num_room_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <include
+                    layout="@layout/fragment_search_housing_input_data_number_picker"
+                    android:id="@+id/fragment_search_housing_input_data_number_picker_num_room_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_num_picker_layout_top_margin" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_housing_input_data_num_bed_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <include
+                    layout="@layout/fragment_search_housing_input_data_number_picker"
+                    android:id="@+id/fragment_search_housing_input_data_number_picker_num_bed_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_num_picker_layout_top_margin" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_housing_input_data_num_bath_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <include
+                    layout="@layout/fragment_search_housing_input_data_number_picker"
+                    android:id="@+id/fragment_search_housing_input_data_number_picker_num_bath_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_num_picker_layout_top_margin" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_num_picker_section_top_margin"
+                    android:text="@string/fragment_search_housing_input_data_amenities_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <LinearLayout
+                    android:id="@+id/fragment_search_housing_input_data_amenities_layout"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_house_type_amenities_option_top_margin"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:background="@drawable/ripple_effect_default_white"
+                    android:clickable="true">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/fragment_search_housing_input_data_amenities"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/fragment_search_housing_input_data_amenities_any"
+                            android:textSize="@dimen/fragment_search_housing_input_data_house_type_amenities_option_text_size"
+                            android:textColor="@color/colorPrimary" />
+
+                        <View
+                            android:layout_width="@dimen/fragment_search_housing_input_data_vertical_line_width"
+                            android:layout_height="match_parent"
+                            android:background="@color/silver_gray" />
+
+                        <ImageView
+                            android:layout_width="@dimen/fragment_search_housing_input_data_multiple_options_icon_width_height"
+                            android:layout_height="@dimen/fragment_search_housing_input_data_multiple_options_icon_width_height"
+                            android:layout_marginLeft="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginStart="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginTop="@dimen/fragment_search_housing_input_data_multiple_options_icon_top_bottom_margin"
+                            android:layout_marginRight="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginEnd="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginBottom="@dimen/fragment_search_housing_input_data_multiple_options_icon_top_bottom_margin"
+                            android:src="@drawable/ic_multiple_options" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/fragment_search_housing_input_data_horizontal_line_height"
+                        android:background="@color/silver_gray" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_housing_input_data_time_restriction_section"
+                    android:textSize="@dimen/fragment_search_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/fragment_search_housing_input_data_section_top_bottom_margin">
+
+                    <Spinner
+                        android:id="@+id/fragment_search_housing_input_data_min_time_restriction_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:paddingLeft="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingStart="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingRight="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingEnd="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:spinnerMode="dropdown"
+                        android:theme="@style/SpinnerItem.SearchHouse"
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/fragment_search_housing_input_data_em_dash_between_spinners"
+                        android:textSize="@dimen/fragment_search_housing_input_data_em_dash_between_spinners_text_size"
+                        android:textColor="@color/textColorPrimary" />
+
+                    <Spinner
+                        android:id="@+id/fragment_search_housing_input_data_max_time_restriction_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:paddingLeft="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingStart="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingRight="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingEnd="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:spinnerMode="dropdown"
+                        android:theme="@style/SpinnerItem.SearchHouse"
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_search_share_housing_input_data_horizontal_line_height"
+                    android:layout_marginTop="@dimen/fragment_search_share_housing_input_data_section_top_bottom_margin"
+                    android:layout_marginBottom="@dimen/fragment_search_share_housing_input_data_section_top_bottom_margin"
+                    android:background="@color/silver_gray" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_share_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_share_housing_input_data_requirements_section"
+                    android:textSize="@dimen/fragment_search_share_housing_input_data_requirements_section_text_size"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorPrimary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_share_housing_input_data_section_top_bottom_margin"
+                    android:text="@string/fragment_search_share_housing_input_data_num_roommate_section"
+                    android:textSize="@dimen/fragment_search_share_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <include
+                    layout="@layout/fragment_search_share_housing_input_data_number_picker"
+                    android:id="@+id/fragment_search_share_housing_input_data_number_picker_num_roommate_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_share_housing_input_data_num_picker_layout_top_margin" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_share_housing_input_data_section_top_bottom_margin">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/fragment_search_share_housing_input_data_required_gender_section"
+                        android:textSize="@dimen/fragment_search_share_housing_input_data_section_text_size"
+                        android:textColor="@color/textColorPrimary" />
+
+                    <Spinner
+                        android:id="@+id/fragment_search_share_housing_input_data_required_gender_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingStart="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingRight="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingEnd="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:spinnerMode="dropdown"
+                        android:entries="@array/hint_signup_gender_array"
+                        android:theme="@style/SpinnerItem.SearchHouse"
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_share_housing_input_data_section_top_bottom_margin">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/fragment_search_share_housing_input_data_required_work_type_section"
+                        android:textSize="@dimen/fragment_search_share_housing_input_data_section_text_size"
+                        android:textColor="@color/textColorPrimary" />
+
+                    <Spinner
+                        android:id="@+id/fragment_search_share_housing_input_data_required_work_type_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingStart="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingRight="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:paddingEnd="@dimen/fragment_search_housing_input_data_spinner_content_left_right_padding"
+                        android:spinnerMode="dropdown"
+                        android:entries="@array/share_housing_work_type_array"
+                        android:theme="@style/SpinnerItem.SearchHouse"
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_share_housing_input_data_other_info_top_margin"
+                    android:text="@string/fragment_search_share_housing_input_data_other_info_section"
+                    android:textSize="@dimen/fragment_search_share_housing_input_data_section_text_size"
+                    android:textColor="@color/textColorPrimary" />
+
+                <LinearLayout
+                    android:id="@+id/fragment_search_housing_input_data_other_info_layout"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_search_share_housing_input_data_other_info_option_top_margin"
+                    android:layout_marginBottom="@dimen/fragment_search_share_housing_input_data_section_top_bottom_margin"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:background="@drawable/ripple_effect_default_white"
+                    android:clickable="true">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/fragment_search_housing_input_data_other_info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/fragment_search_share_housing_input_data_other_info_any"
+                            android:textSize="@dimen/fragment_search_housing_input_data_house_type_amenities_option_text_size"
+                            android:textColor="@color/colorPrimary" />
+
+                        <View
+                            android:layout_width="@dimen/fragment_search_housing_input_data_vertical_line_width"
+                            android:layout_height="match_parent"
+                            android:background="@color/silver_gray" />
+
+                        <ImageView
+                            android:layout_width="@dimen/fragment_search_housing_input_data_multiple_options_icon_width_height"
+                            android:layout_height="@dimen/fragment_search_housing_input_data_multiple_options_icon_width_height"
+                            android:layout_marginLeft="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginStart="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginTop="@dimen/fragment_search_housing_input_data_multiple_options_icon_top_bottom_margin"
+                            android:layout_marginRight="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginEnd="@dimen/fragment_search_housing_input_data_multiple_options_icon_left_right_margin"
+                            android:layout_marginBottom="@dimen/fragment_search_housing_input_data_multiple_options_icon_top_bottom_margin"
+                            android:src="@drawable/ic_multiple_options" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/fragment_search_housing_input_data_horizontal_line_height"
+                        android:background="@color/silver_gray" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/fragment_search_housing_input_data_search_bar_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardElevation="@dimen/fragment_search_housing_input_data_search_bar_card_view_elevation">
+
+        <include
+            layout="@layout/fragment_search_housing_input_data_search_bar"
+            android:id="@+id/fragment_search_housing_input_data_search_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

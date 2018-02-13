@@ -9,10 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lmtri.sharespace.R;
+import com.lmtri.sharespace.fragment.appointment.AppointmentFragment;
 import com.lmtri.sharespace.fragment.home.HousingFragment;
+import com.lmtri.sharespace.fragment.interested.InterestedFragment;
 import com.lmtri.sharespace.fragment.profile.ProfileFragment;
-import com.lmtri.sharespace.fragment.saved.SavedFragment;
+import com.lmtri.sharespace.fragment.share.ShareHousingFragment;
 import com.lmtri.sharespace.helper.Constants;
+import com.lmtri.sharespace.listener.OnHousingAppointmentListInteractionListener;
+import com.lmtri.sharespace.listener.OnHousingListInteractionListener;
+import com.lmtri.sharespace.listener.OnShareHousingAppointmentListInteractionListener;
+import com.lmtri.sharespace.listener.OnShareHousingListInteractionListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +31,12 @@ public class RootFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
     private int viewPagerIndex;
+    private OnHousingListInteractionListener mHousingListInteractionListener;
+//    private OnSavedHousingListInteractionListener mSavedHousingListInteractionListener;
+//    private OnSavedShareHousingListInteractionListener mSavedShareHousingListInteractionListener;
+    private OnShareHousingListInteractionListener mShareHousingListInteractionListener;
+    private OnHousingAppointmentListInteractionListener mHousingAppointmentListInteractionListener;
+    private OnShareHousingAppointmentListInteractionListener mShareHousingAppointmentListInteractionListener;
 
 
     public RootFragment() {
@@ -62,19 +74,30 @@ public class RootFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_root, container, false);
 
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        Fragment fragment;
 
         switch (viewPagerIndex) {
             case Constants.VIEW_PAGER_INDEX_HOME:
-                transaction.replace(R.id.root_container, HousingFragment.newInstance(1));
+                fragment = HousingFragment.newInstance(1);
+                ((HousingFragment) fragment).setListener(mHousingListInteractionListener);
+                transaction.replace(R.id.root_container, fragment);
                 break;
             case Constants.VIEW_PAGER_INDEX_SAVED:
-                transaction.replace(R.id.root_container, SavedFragment.newInstance("a", "b"));
+                fragment = InterestedFragment.newInstance("a", "b");
+                ((InterestedFragment) fragment).setHousingListInteractionListener(mHousingListInteractionListener);
+                ((InterestedFragment) fragment).setShareHousingListInteractionListener(mShareHousingListInteractionListener);
+                transaction.replace(R.id.root_container, fragment);
                 break;
             case Constants.VIEW_PAGER_INDEX_SHARE:
-                transaction.replace(R.id.root_container, SavedFragment.newInstance("c", "d"));
+                fragment = ShareHousingFragment.newInstance(1);
+                ((ShareHousingFragment) fragment).setListener(mShareHousingListInteractionListener);
+                transaction.replace(R.id.root_container, fragment);
                 break;
-            case Constants.VIEW_PAGER_INDEX_INBOX:
-                transaction.replace(R.id.root_container, SavedFragment.newInstance("e", "f"));
+            case Constants.VIEW_PAGER_INDEX_SCHEDULE:
+                fragment = AppointmentFragment.newInstance("e", "f");
+                ((AppointmentFragment) fragment).setHousingAppointmentListInteractionListener(mHousingAppointmentListInteractionListener);
+                ((AppointmentFragment) fragment).setShareHousingAppointmentListInteractionListener(mShareHousingAppointmentListInteractionListener);
+                transaction.replace(R.id.root_container, fragment);
                 break;
             case Constants.VIEW_PAGER_INDEX_PROFILE:
                 transaction.replace(R.id.root_container, ProfileFragment.newInstance("g", "h"));
@@ -83,6 +106,30 @@ public class RootFragment extends Fragment {
         transaction.commit();
 
         return view;
+    }
+
+    public void setHousingListInteractionListener(OnHousingListInteractionListener listener) {
+        mHousingListInteractionListener = listener;
+    }
+
+//    public void setSavedHousingListInteractionListener(OnSavedHousingListInteractionListener listener) {
+//        mSavedHousingListInteractionListener = listener;
+//    }
+//
+//    public void setSavedShareHousingListInteractionListener(OnSavedShareHousingListInteractionListener listener) {
+//        mSavedShareHousingListInteractionListener = listener;
+//    }
+
+    public void setShareHousingListInteractionListener(OnShareHousingListInteractionListener listener) {
+        mShareHousingListInteractionListener = listener;
+    }
+
+    public void setHousingAppointmentListInteractionListener(OnHousingAppointmentListInteractionListener listener) {
+        mHousingAppointmentListInteractionListener = listener;
+    }
+
+    public void setShareHousingAppointmentListInteractionListener(OnShareHousingAppointmentListInteractionListener listener) {
+        mShareHousingAppointmentListInteractionListener = listener;
     }
 
     public Fragment getCurrentFragment() {

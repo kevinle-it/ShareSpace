@@ -17,7 +17,7 @@
             android:layout_height="@dimen/fragment_profile_info_area_user_image_width_height"
             android:layout_gravity="center"
             android:scaleType="fitXY"
-            android:src="@drawable/profile_image_2" />
+            android:src="@drawable/ic_profile_picture" />
 
         <View
             android:layout_width="match_parent"
@@ -28,27 +28,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="SELENA GOMEZ"
+            android:text="User's Name"
             android:textStyle="bold"
             android:textSize="@dimen/fragment_profile_info_area_username_text_size"
             android:textColor="@color/textColorPrimary" />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/fragment_profile_info_area_space_between_username_and_edit_profile" />
+            android:layout_height="@dimen/fragment_profile_info_area_space_between_username_and_email" />
 
         <TextView
-            android:id="@+id/fragment_profile_edit_info"
+            android:id="@+id/fragment_profile_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/fragment_profile_edit_profile"
-            android:textStyle="bold"
-            android:textSize="@dimen/fragment_profile_info_area_edit_profile_text_size"
-            android:textColor="@color/colorPrimary"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:background="@drawable/ripple_effect_light_theme_default_background_color"
-            android:clickable="true" />
+            android:text="User's Email"
+            android:textSize="@dimen/fragment_profile_info_area_username_text_size"
+            android:textColor="@color/textColorPrimary" />
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/fragment_profile_info_area_space_between_username_and_edit_profile" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/fragment_profile_edit_info"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="@string/fragment_profile_edit_profile"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textSize="@dimen/fragment_profile_info_area_edit_profile_text_size"-->
+            <!--android:textColor="@color/colorPrimary"-->
+            <!--android:foreground="?android:attr/selectableItemBackground"-->
+            <!--android:background="@drawable/ripple_effect_default_white"-->
+            <!--android:clickable="true" />-->
 
     </LinearLayout>
 

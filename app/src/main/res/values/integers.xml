@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="fragment_search_housing_input_data_price_any">-2</integer>
+    <integer name="fragment_search_housing_input_data_price_deal">-1</integer>
+    <integer name="fragment_search_housing_input_data_price_500000">500000</integer>
+    <integer name="fragment_search_housing_input_data_price_1000000">1000000</integer>
+    <integer name="fragment_search_housing_input_data_price_3000000">3000000</integer>
+    <integer name="fragment_search_housing_input_data_price_5000000">5000000</integer>
+    <integer name="fragment_search_housing_input_data_price_10000000">10000000</integer>
+    <integer name="fragment_search_housing_input_data_price_40000000">40000000</integer>
+    <integer-array name="fragment_search_housing_input_data_price_integer_array">
+        <item>@integer/fragment_search_housing_input_data_price_any</item>
+        <item>@integer/fragment_search_housing_input_data_price_deal</item>
+        <item>@integer/fragment_search_housing_input_data_price_500000</item>
+        <item>@integer/fragment_search_housing_input_data_price_1000000</item>
+        <item>@integer/fragment_search_housing_input_data_price_3000000</item>
+        <item>@integer/fragment_search_housing_input_data_price_5000000</item>
+        <item>@integer/fragment_search_housing_input_data_price_10000000</item>
+        <item>@integer/fragment_search_housing_input_data_price_40000000</item>
+    </integer-array>
+
+    <integer name="fragment_search_housing_input_data_area_any">-1</integer>
+    <integer name="fragment_search_housing_input_data_area_30">30</integer>
+    <integer name="fragment_search_housing_input_data_area_50">50</integer>
+    <integer name="fragment_search_housing_input_data_area_80">80</integer>
+    <integer name="fragment_search_housing_input_data_area_100">100</integer>
+    <integer name="fragment_search_housing_input_data_area_150">150</integer>
+    <integer name="fragment_search_housing_input_data_area_200">200</integer>
+    <integer name="fragment_search_housing_input_data_area_250">250</integer>
+    <integer name="fragment_search_housing_input_data_area_300">300</integer>
+    <integer name="fragment_search_housing_input_data_area_500">500</integer>
+    <integer-array name="fragment_search_housing_input_data_area_integer_array">
+        <item>@integer/fragment_search_housing_input_data_area_any</item>
+        <item>@integer/fragment_search_housing_input_data_area_30</item>
+        <item>@integer/fragment_search_housing_input_data_area_50</item>
+        <item>@integer/fragment_search_housing_input_data_area_80</item>
+        <item>@integer/fragment_search_housing_input_data_area_100</item>
+        <item>@integer/fragment_search_housing_input_data_area_150</item>
+        <item>@integer/fragment_search_housing_input_data_area_200</item>
+        <item>@integer/fragment_search_housing_input_data_area_250</item>
+        <item>@integer/fragment_search_housing_input_data_area_300</item>
+        <item>@integer/fragment_search_housing_input_data_area_500</item>
+    </integer-array>
+
+    <integer name="fragment_search_housing_input_data_time_restriction_any">-1</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_0">0</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_1">1</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_2">2</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_3">3</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_4">4</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_5">5</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_6">6</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_7">7</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_8">8</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_9">9</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_10">10</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_11">11</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_12">12</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_13">13</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_14">14</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_15">15</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_16">16</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_17">17</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_18">18</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_19">19</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_20">20</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_21">21</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_22">22</integer>
+    <integer name="fragment_search_housing_input_data_time_restriction_23">23</integer>
+    <integer-array name="fragment_search_housing_input_data_time_restriction_integer_array">
+        <item>@integer/fragment_search_housing_input_data_time_restriction_any</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_0</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_1</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_2</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_3</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_4</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_5</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_6</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_7</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_8</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_9</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_10</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_11</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_12</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_13</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_14</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_15</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_16</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_17</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_18</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_19</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_20</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_21</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_22</item>
+        <item>@integer/fragment_search_housing_input_data_time_restriction_23</item>
+    </integer-array>
+</resources>

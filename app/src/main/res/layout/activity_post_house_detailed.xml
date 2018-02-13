@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lmtri.sharespace.activity.posthouse.PostHouseDetailedItemActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/activity_post_house_detail_type_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/activity_post_house_detailed_item_toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+        <TextView
+            android:id="@+id/activity_post_house_detailed_item_toolbar_done"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:padding="@dimen/activity_post_house_detailed_item_toolbar_done_padding"
+            android:text="@string/activity_post_house_detailed_item_done_button"
+            android:textColor="@color/white"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/ripple_effect_primary_color"
+            android:clickable="true"
+            android:visibility="gone" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/activity_post_house_detailed_item_container"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </ScrollView>
+
+</LinearLayout>

@@ -23,12 +23,12 @@
             android:layout_marginBottom="@dimen/activity_login_share_space_logo_bottom_margin"
             android:layout_gravity="center_horizontal" />
 
-        <!-- Dummy item to prevent AutoCompleteTextView from receiving focus -->
-        <LinearLayout
-            android:focusable="true"
-            android:focusableInTouchMode="true"
+        <View
+            android:id="@+id/dummy_view"
             android:layout_width="0dp"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
 
         <!--  Email Label -->
         <android.support.design.widget.TextInputLayout
@@ -38,22 +38,21 @@
             android:layout_marginBottom="@dimen/activity_login_input_email_bottom_margin"
             app:hintTextAppearance="@style/TextAppearance.AppCompat.TextInputLayout"
             android:textColorHint="@color/white">
-            <!-- :nextFocusUp and :nextFocusLeft have been set to the id of this component
-            to prevent the dummy from receiving focus again -->
             <com.lmtri.sharespace.customview.CustomEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/activity_login_input_email_height"
-                android:paddingLeft="@dimen/activity_login_input_email_left_padding"
+                android:paddingLeft="@dimen/activity_login_input_email_left_right_padding"
+                android:paddingStart="@dimen/activity_login_input_email_left_right_padding"
+                android:paddingRight="@dimen/activity_login_input_email_left_right_padding"
+                android:paddingEnd="@dimen/activity_login_input_email_left_right_padding"
                 android:background="@drawable/rounded_edittext"
                 android:theme="@style/CustomEditTextTheme"
                 android:hint="@string/prompt_email"
                 android:textColor="@color/white"
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:nextFocusUp="@id/email"
-                android:nextFocusLeft="@id/email" />
+                android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Password Label -->
@@ -68,7 +67,10 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/activity_login_input_password_height"
-                android:paddingLeft="@dimen/activity_login_input_password_left_padding"
+                android:paddingLeft="@dimen/activity_login_input_password_left_right_padding"
+                android:paddingStart="@dimen/activity_login_input_password_left_right_padding"
+                android:paddingRight="@dimen/activity_login_input_password_left_right_padding"
+                android:paddingEnd="@dimen/activity_login_input_password_left_right_padding"
                 android:background="@drawable/rounded_edittext"
                 android:theme="@style/CustomEditTextTheme"
                 android:hint="@string/prompt_password"
@@ -83,11 +85,12 @@
             android:id="@+id/signin_button"
             style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/activity_login_signin_button_height"
-            android:layout_marginTop="@dimen/activity_login_signin_button_top_margin"
-            android:layout_marginBottom="@dimen/activity_login_signin_button_bottom_margin"
+            android:layout_height="@dimen/activity_login_button_height"
+            android:layout_marginTop="@dimen/activity_login_button_top_margin"
+            android:layout_marginBottom="@dimen/activity_login_button_bottom_margin"
             android:background="@drawable/rounded_button"
             android:text="@string/action_sign_in"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <!-- Signup link Label -->
@@ -95,8 +98,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_login_signup_link_bottom_margin"
-            android:text="@string/signup_link"
+            android:padding="@dimen/activity_login_signup_link_padding"
             android:gravity="center"
+            android:text="@string/signup_link"
+            android:textColor="@color/white"
             android:textSize="@dimen/activity_login_signup_link_text_size" />
 
     </LinearLayout>
